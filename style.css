@@ -1316,11 +1316,15 @@ select.contact-input-field option {
   transform: rotateY(0deg);
 }
 
-/* steps to study abroad section */
-.steps-animation-container {
-    display: flex;
-    gap: 2rem;
+@media (max-width: 768px) {
+    .horizontal-scroll-outer{
+        padding: 0 !important;
+    }
 }
+
+
+/* steps to study abroad section */
+
 
 .step-card {
     margin-bottom: 2rem;
@@ -1415,6 +1419,19 @@ select.contact-input-field option {
     padding:0 !important;
 }
 
+
+@media (max-width: 768px) {
+    .steps-animation-container{
+        flex-direction: column-reverse;
+    }
+    .steps-section img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
 /* courses section  */
  .section-courses {
       padding: 60px 20px;
@@ -1439,10 +1456,11 @@ select.contact-input-field option {
       flex-wrap: wrap;
       gap: 15px;
       margin-bottom: 30px;
+      /* padding: 20px; */
     }
 
     .course-nav button {
-      padding: 15px20px;
+      padding: 15px 20px;
       border: none;
       background: #a2c4e082;
       border-radius: 20px;
