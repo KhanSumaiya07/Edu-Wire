@@ -303,88 +303,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // steps animation effects 
-document.addEventListener('DOMContentLoaded', function() {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Register ScrollTrigger plugin
+//     gsap.registerPlugin(ScrollTrigger);
     
-    const stepsSection = document.querySelector('.steps-section');
-    const stepsTrack = document.querySelector('.steps-track');
-    const stepCards = gsap.utils.toArray('.step-card');
-    const stepsImage = document.querySelector('.steps-image img');
+//     const stepsSection = document.querySelector('.steps-section');
+//     const stepsTrack = document.querySelector('.steps-track');
+//     const stepCards = gsap.utils.toArray('.step-card');
+//     const stepsImage = document.querySelector('.steps-image img');
     
-    // Set initial state
-    gsap.set(stepCards, { y: 100, opacity: 0 });
-    gsap.set(stepCards[0], { y: 0, opacity: 1 });
+//     // Set initial state
+//     gsap.set(stepCards, { y: 100, opacity: 0 });
+//     gsap.set(stepCards[0], { y: 0, opacity: 1 });
     
-    // Create the pin and animation
-    let stepTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.steps-section',
-            start: 'top top',
-            end: '+=3000',
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-            markers: false // set to true for debugging
-        }
-    });
+//     // Create the pin and animation
+//     let stepTimeline = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: '.steps-section',
+//             start: 'top top',
+//             end: '+=3000',
+//             scrub: 1,
+//             pin: true,
+//             anticipatePin: 1,
+//             markers: false // set to true for debugging
+//         }
+//     });
     
-    // Animate each step card
-    stepCards.forEach((card, index) => {
-        if (index > 0) {
-            // For subsequent cards, animate them in when scrolled to
-            stepTimeline.to(card, {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                onStart: () => {
-                    // Add active class to current card
-                    card.classList.add('active');
-                    // Remove active class from previous card's content
-                    if (stepCards[index-1]) {
-                        stepCards[index-1].classList.remove('active');
-                    }
-                },
-                onReverseComplete: () => {
-                    // Handle reverse scroll
-                    card.classList.remove('active');
-                    if (stepCards[index-1]) {
-                        stepCards[index-1].classList.add('active');
-                    }
-                }
-            }, index * 0.5);
-        } else {
-            // First card starts active
-            card.classList.add('active');
-        }
-    });
+//     // Animate each step card
+//     stepCards.forEach((card, index) => {
+//         if (index > 0) {
+//             // For subsequent cards, animate them in when scrolled to
+//             stepTimeline.to(card, {
+//                 y: 0,
+//                 opacity: 1,
+//                 duration: 0.5,
+//                 onStart: () => {
+//                     // Add active class to current card
+//                     card.classList.add('active');
+//                     // Remove active class from previous card's content
+//                     if (stepCards[index-1]) {
+//                         stepCards[index-1].classList.remove('active');
+//                     }
+//                 },
+//                 onReverseComplete: () => {
+//                     // Handle reverse scroll
+//                     card.classList.remove('active');
+//                     if (stepCards[index-1]) {
+//                         stepCards[index-1].classList.add('active');
+//                     }
+//                 }
+//             }, index * 0.5);
+//         } else {
+//             // First card starts active
+//             card.classList.add('active');
+//         }
+//     });
     
-    // Optional: Add image animation
-    stepTimeline.from(stepsImage, {
-        scale: 0.9,
-        opacity: 0.7,
-        duration: 2,
-        ease: "power1.out"
-    }, 0);
+//     // Optional: Add image animation
+//     stepTimeline.from(stepsImage, {
+//         scale: 0.9,
+//         opacity: 0.7,
+//         duration: 2,
+//         ease: "power1.out"
+//     }, 0);
     
-    // Click handler for headers (optional)
-    document.querySelectorAll('.step-header').forEach(header => {
-        header.addEventListener('click', function() {
-            const card = this.closest('.step-card');
-            const isActive = card.classList.contains('active');
+//     // Click handler for headers (optional)
+//     document.querySelectorAll('.step-header').forEach(header => {
+//         header.addEventListener('click', function() {
+//             const card = this.closest('.step-card');
+//             const isActive = card.classList.contains('active');
             
-            // Close all cards first
-            document.querySelectorAll('.step-card').forEach(c => {
-                c.classList.remove('active');
-            });
+//             // Close all cards first
+//             document.querySelectorAll('.step-card').forEach(c => {
+//                 c.classList.remove('active');
+//             });
             
-            // Open clicked card if it wasn't active
-            if (!isActive) {
-                card.classList.add('active');
-            }
-        });
-    });
-});
+//             // Open clicked card if it wasn't active
+//             if (!isActive) {
+//                 card.classList.add('active');
+//             }
+//         });
+//     });
+// });
 
 
 // courses 
