@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts cdn  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg" alt="edu-wire logo">
+                </a>
+            </div>
+
+            <div class="nav-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Our Services
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="#">IELTS Training</a></li>
+                            <li><a href="#">Scholarship Guidance</a></li>
+                            <li><a href="#">Admission Guidance</a></li>
+                            <li><a href="#">Financial Assistance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Study Abroad
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                            </svg>
+                        </a>
+
+                        <div class="dropdown sub-dropdown">
+                            <!-- Left Column -->
+                            <ul class="submenu-list">
+                                <li class="submenu-trigger active" data-target="mbbs-submenu"><a href="#">MBBS
+                                        Abroad</a></li>
+                                <li class="submenu-trigger" data-target="europe-submenu"><a href="#">Study in Europe</a>
+                                </li>
+                                <li class="submenu-trigger" data-target="asia-submenu"><a href="#">English Speaking
+                                        Countries</a></li>
+                            </ul>
+
+                            <!-- Right Column -->
+                            <div class="submenu-content">
+                                <ul class="submenu active" id="mbbs-submenu"></ul>
+                                <ul class="submenu" id="europe-submenu"></ul>
+                                <ul class="submenu" id="asia-submenu"></ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blogs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-btn">
+                            <svg class="icon search-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="icon moon-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"
+                                fill="currentColor"></path>
+                        </svg>
+                        <svg class="icon sun-icon hidden" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </button> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- hero section -->
+        <div class="content hero-section-eduwire">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- Slide 1 -->
+                        <div class="hero-slide">
+                            <div class="hero-content">
+                                <h1 class="hero-sec-heading">Unlock Global <span class="highlight-line">
+                                        Opportunities</span> for Your Education</h1>
+                                <p>Discover the world’s top universities and take the first step toward an international
+                                    career with expert guidance tailored to you.</p>
+                                <button class="edu-wire-btn"><a href="#" class="hero-btn">Get Started Today</a></button>
+                            </div>
+                            <div class="hero-image">
+                                <img src="assets/images/slide1-globe.png" alt="Globe with students and flags">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <!-- Slide 2 -->
+                        <div class="hero-slide">
+                            <div class="hero-content">
+                                <h1 class="hero-sec-heading">Study at the World’s Leading<span class="highlight-line">
+                                        Universities</span></h1>
+                                <p>Connect with prestigious institutions across Europe, Asia, and beyond — all from one
+                                    trusted platform designed for your success.</p>
+                                <button class="edu-wire-btn"><a href="#" class="hero-btn">Browse Top
+                                        Universities</a></button>
+                            </div>
+                            <div class="hero-image">
+                                <img src="assets/images/slide2-universities.png" alt="Map with university pins">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <!-- Slide 3 -->
+                        <div class="hero-slide">
+                            <div class="hero-content">
+                                <h1 class="hero-sec-heading">Personalized<span class="highlight-line"> Guidance</span>
+                                    from Start to Success</h1>
+                                <p>From choosing the right course to visa approval, our expert mentors are here to walk
+                                    you through every milestone of your study abroad journey.</p>
+                                <button class="edu-wire-btn"><a href="#" class="hero-btn">Book Your Free
+                                        Session</a></button>
+                            </div>
+                            <div class="hero-image">
+                                <img src="assets/images/slide3-counseling.png" alt="Counselor guiding student">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- end of hero section -->
+    </main>
+
+    <!-- why edu-wire  -->
+    <section>
+        <div class=" why-eduwire">
+            <div class="why-eduwire-content content-flex">
+                <div class="column">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 170 170"
+                            fill="none">
+                            <rect x="0.241089" y="0.686646" width="168.84" height="168.84" rx="84.42" fill="#0D6493"
+                                fill-opacity="1"></rect>
+                            <path
+                                d="M55.5961 116.703C56.9947 116.703 58.1287 115.57 58.1287 114.171V111.264C58.1287 109.866 56.9947 108.732 55.5961 108.732C54.1974 108.732 53.0635 109.866 53.0635 111.264V114.171C53.0635 115.57 54.1974 116.703 55.5961 116.703Z"
+                                fill="white"></path>
+                            <path
+                                d="M113.725 116.703C115.124 116.703 116.258 115.57 116.258 114.171V111.264C116.258 109.866 115.124 108.732 113.725 108.732C112.327 108.732 111.193 109.866 111.193 111.264V114.171C111.193 115.57 112.327 116.703 113.725 116.703Z"
+                                fill="white"></path>
+                            <path
+                                d="M125.351 70.9473H102.697L87.1936 63.196V58.5741L102.1 58.5741C103.124 58.5741 104.047 57.9571 104.439 57.0108C104.831 56.0644 104.615 54.9751 103.891 54.2507L99.8684 50.2283L103.89 46.207C104.615 45.4827 104.831 44.3934 104.439 43.447C104.047 42.5007 103.124 41.8835 102.1 41.8835H84.661C83.2624 41.8835 82.1284 43.0175 82.1284 44.4161V63.196L66.6247 70.9473H43.9706C42.5719 70.9473 41.438 72.0813 41.438 73.4799V125.797C41.438 127.196 42.5719 128.33 43.9706 128.33H125.351C126.75 128.33 127.884 127.196 127.884 125.797V73.4799C127.884 72.0813 126.75 70.9473 125.351 70.9473ZM87.1936 46.9487H95.9848L94.4961 48.4371C94.0212 48.912 93.7542 49.5561 93.7542 50.2278C93.7542 50.8996 94.021 51.5437 94.496 52.0187L95.9858 53.5087H87.1936V46.9487ZM64.6898 123.264H46.5032V87.6392H64.6898V123.264ZM64.6898 82.574H46.5032V76.0125H64.6898V82.574ZM87.9414 123.264H81.3808V114.168C81.3808 112.337 82.8686 110.89 84.6634 110.89C86.4398 110.89 87.9414 112.326 87.9414 114.168V123.264ZM99.5671 123.264H93.0066V114.168C93.0066 109.619 89.3327 105.824 84.6588 105.824C80.0524 105.824 76.3156 109.553 76.3156 114.168V123.264H69.755V75.0452L84.661 67.5928L99.5671 75.0452V123.264ZM122.819 123.264H104.632V87.6392L122.819 87.6392V123.264ZM122.819 82.574L104.632 82.574V76.0125L122.819 76.0125V82.574Z"
+                                fill="white"></path>
+                            <path
+                                d="M55.5961 102.171C56.9947 102.171 58.1287 101.037 58.1287 99.6385V96.7319C58.1287 95.3333 56.9947 94.1993 55.5961 94.1993C54.1974 94.1993 53.0635 95.3333 53.0635 96.7319V99.6385C53.0635 101.037 54.1974 102.171 55.5961 102.171Z"
+                                fill="white"></path>
+                            <path
+                                d="M113.725 102.171C115.124 102.171 116.258 101.037 116.258 99.6385V96.7319C116.258 95.3333 115.124 94.1993 113.725 94.1993C112.327 94.1993 111.193 95.3333 111.193 96.7319V99.6385C111.193 101.037 112.327 102.171 113.725 102.171Z"
+                                fill="white"></path>
+                            <path
+                                d="M90.4743 102.171C91.8729 102.171 93.0068 101.037 93.0068 99.6385V96.7319C93.0068 95.3333 91.8729 94.1993 90.4743 94.1993C89.0756 94.1993 87.9417 95.3333 87.9417 96.7319V99.6385C87.9417 101.037 89.0756 102.171 90.4743 102.171Z"
+                                fill="white"></path>
+                            <path
+                                d="M90.4743 87.6397C91.8729 87.6397 93.0068 86.5058 93.0068 85.1071V82.2006C93.0068 80.8019 91.8729 79.668 90.4743 79.668C89.0756 79.668 87.9417 80.8019 87.9417 82.2006V85.1071C87.9417 86.5058 89.0756 87.6397 90.4743 87.6397Z"
+                                fill="white"></path>
+                            <path
+                                d="M78.8488 94.1993C77.4501 94.1993 76.3162 95.3333 76.3162 96.7319V99.6385C76.3162 101.037 77.4501 102.171 78.8488 102.171C80.2474 102.171 81.3814 101.037 81.3814 99.6385V96.7319C81.3814 95.3333 80.2474 94.1993 78.8488 94.1993Z"
+                                fill="white"></path>
+                            <path
+                                d="M78.8488 79.668C77.4501 79.668 76.3162 80.8019 76.3162 82.2006V85.1071C76.3162 86.5058 77.4501 87.6397 78.8488 87.6397C80.2474 87.6397 81.3814 86.5058 81.3814 85.1071V82.2006C81.3814 80.8017 80.2474 79.668 78.8488 79.668Z"
+                                fill="white"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="counts-edu-wire">1000+</p>
+                        <h4>University Partnerships</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 170 170"
+                            fill="none">
+                            <rect x="0.694092" y="0.798706" width="168.84" height="168.84" rx="84.42" fill="#0D6493"
+                                fill-opacity="1"></rect>
+                            <path
+                                d="M128.337 71.6552C128.337 55.3009 115.032 41.9956 98.6776 41.9956C82.3233 41.9956 69.018 55.3009 69.018 71.6552C69.018 75.5649 69.78 79.2995 71.1613 82.72C70.906 82.7597 70.6547 82.835 70.418 82.9535L43.291 96.5169C42.433 96.9459 41.891 97.8229 41.891 98.7822C41.891 99.7416 42.433 100.618 43.291 101.048L55.4544 107.129V122.708C55.4544 123.667 55.9967 124.544 56.8551 124.973C61.3974 127.242 66.4792 128.442 71.5506 128.442C76.6221 128.442 81.7036 127.242 86.2459 124.973C87.1043 124.544 87.6466 123.667 87.6466 122.707V107.129L96.1449 102.88V119.413C96.1449 120.812 97.2788 121.946 98.6775 121.946C100.076 121.946 101.21 120.812 101.21 119.413V101.205C116.383 99.916 128.337 87.1564 128.337 71.6552ZM121.823 63.337C122.76 65.9363 123.272 68.737 123.272 71.6552C123.272 74.5735 122.76 77.374 121.823 79.9735H111.562C111.891 77.307 112.061 74.5108 112.061 71.6552C112.061 68.7996 111.891 66.0035 111.562 63.337L121.823 63.337ZM119.302 58.2718L110.713 58.2718C110.187 55.8292 109.512 53.5598 108.702 51.5329C108.284 50.4883 107.833 49.5254 107.355 48.6432C112.286 50.5087 116.465 53.9147 119.302 58.2718ZM98.6776 47.0608C100.904 47.0608 103.791 51.1889 105.513 58.2718H91.8421C93.5636 51.1889 96.4513 47.0608 98.6776 47.0608ZM89.9996 48.6433C89.5214 49.5255 89.0711 50.4883 88.6534 51.5329C87.8427 53.5598 87.1683 55.8292 86.6417 58.2718H78.0533C80.8905 53.9149 85.0693 50.5089 89.9996 48.6433ZM78.6807 85.9523C78.4656 85.6522 78.2552 85.3485 78.0533 85.0385L86.6415 85.0385C87.0803 87.0744 87.6233 88.9875 88.261 90.7424L78.6807 85.9523ZM75.5324 63.337L85.7931 63.337C85.4645 66.0035 85.2942 68.7996 85.2942 71.6552C85.2942 74.5108 85.4647 77.307 85.7933 79.9735L75.5324 79.9735C74.5953 77.3742 74.0832 74.5735 74.0832 71.6552C74.0832 68.737 74.5953 65.9364 75.5324 63.337ZM82.5814 121.093C79.1089 122.59 75.326 123.376 71.5506 123.376C67.775 123.376 63.9921 122.59 60.5196 121.093V109.662L70.418 114.611C70.7744 114.789 71.1624 114.878 71.5506 114.878C71.9388 114.878 72.3268 114.789 72.6832 114.611L82.5814 109.662V121.093ZM71.5506 109.514L50.0867 98.7822L71.5506 88.0503L93.0144 98.7822L71.5506 109.514ZM99.1517 96.1878L96.0484 94.6362C94.4882 92.818 92.9317 89.521 91.8421 85.0387H105.513C103.911 91.6285 101.301 95.6585 99.1517 96.1878ZM106.456 79.9735H90.8987C90.5566 77.4397 90.3592 74.6564 90.3592 71.6552C90.3592 68.6541 90.5564 65.8709 90.8987 63.337H106.456C106.798 65.8708 106.996 68.6541 106.996 71.6552C106.996 74.6564 106.798 77.4395 106.456 79.9735ZM107.355 94.6671C107.833 93.7849 108.284 92.8222 108.702 91.7774C109.512 89.7505 110.187 87.4813 110.713 85.0385H119.302C116.465 89.3956 112.286 92.8016 107.355 94.6671Z"
+                                fill="white"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="counts-edu-wire">100000+</p>
+                        <h4>Programs</h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="170" height="170" viewBox="0 0 170 170"
+                            fill="none">
+                            <rect x="0.949829" y="0.686646" width="168.84" height="168.84" rx="84.42" fill="#0D6493"
+                                fill-opacity="1"></rect>
+                            <path
+                                d="M93.5089 103.915H115.21C116.609 103.915 117.743 102.781 117.743 101.382C117.743 96.3604 114.961 91.9781 110.859 89.6888C111.776 88.3921 112.317 86.8115 112.317 85.106C112.317 80.718 108.748 77.1481 104.36 77.1481C99.9715 77.1481 96.4016 80.718 96.4016 85.106C96.4016 86.8115 96.9427 88.3921 97.8597 89.6888C93.7579 91.9781 90.9763 96.3604 90.9763 101.382C90.9763 102.781 92.1102 103.915 93.5089 103.915ZM104.36 82.2133C105.955 82.2133 107.252 83.511 107.252 85.106C107.252 86.701 105.955 87.9987 104.36 87.9987C102.765 87.9987 101.467 86.701 101.467 85.106C101.467 83.511 102.765 82.2133 104.36 82.2133ZM104.36 93.0639C108.064 93.0639 111.21 95.4974 112.284 98.8496H96.4357C97.5095 95.4974 100.656 93.0639 104.36 93.0639Z"
+                                fill="white"></path>
+                            <path
+                                d="M120.635 55.4471L50.1047 55.4471C45.7572 55.4471 42.1467 58.959 42.1467 63.4052L42.1467 106.808C42.1467 111.174 45.6753 114.766 50.1047 114.766L120.635 114.766C124.982 114.766 128.593 111.254 128.593 106.808V63.4052C128.593 59.048 125.072 55.4471 120.635 55.4471ZM123.528 106.808C123.528 108.408 122.232 109.701 120.635 109.701L50.1047 109.701C48.511 109.701 47.2119 108.411 47.2119 106.808L47.2119 71.3632L123.528 71.3632V106.808ZM123.528 66.298L47.2119 66.298V63.4052C47.2119 61.808 48.5047 60.5125 50.1047 60.5125L120.635 60.5125C122.229 60.5125 123.528 61.8021 123.528 63.4052V66.298Z"
+                                fill="white"></path>
+                            <path
+                                d="M55.53 82.2133H79.9443C81.343 82.2133 82.4769 81.0793 82.4769 79.6807C82.4769 78.282 81.343 77.1481 79.9443 77.1481H55.53C54.1314 77.1481 52.9974 78.282 52.9974 79.6807C52.9974 81.0793 54.1312 82.2133 55.53 82.2133Z"
+                                fill="white"></path>
+                            <path
+                                d="M55.53 93.0645H79.9443C81.343 93.0645 82.4769 91.9305 82.4769 90.5319C82.4769 89.1332 81.343 87.9993 79.9443 87.9993H55.53C54.1314 87.9993 52.9974 89.1332 52.9974 90.5319C52.9974 91.9305 54.1312 93.0645 55.53 93.0645Z"
+                                fill="white"></path>
+                            <path
+                                d="M55.53 103.915H66.3809C67.7795 103.915 68.9135 102.781 68.9135 101.382C68.9135 99.9838 67.7795 98.8499 66.3809 98.8499H55.53C54.1314 98.8499 52.9974 99.9838 52.9974 101.382C52.9974 102.781 54.1312 103.915 55.53 103.915Z"
+                                fill="white"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="counts-edu-wire">2000+</p>
+                        <h4>Visa Approvals</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of why edu-wire  -->
+
+    <!-- contact edu-wire  -->
+    <section class="contact-edu-wire sec-padding content dark-bg-section">
+        <div>
+            <div class="container">
+                <div class="heading text-center">
+                    <!-- Contact our team  -->
+                    <h2 class="heading-section text-white">Get in Touch with <span class="highlight-line">Our
+                            Experts</span> Today</h2>
+                </div>
+                <div class="content-flex">
+                    <div class="column">
+
+                        <form action="contact_process.php" method="post" class="signin-form">
+                            <div class="">
+                                <!--<div class="contact-flex">-->
+                                <div class="form-input mt-4">
+                                    <input class="contact-input-field" type="text" name="name"
+                                        placeholder="Enter Full name *" required="">
+                                </div>
+                                <!--<div class="form-input mt-4">-->
+                                <!--    <input type="text" name="name"  placeholder="Enter Last name *"-->
+                                <!--        required="" />-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-input mt-4">
+                                    <input class="contact-input-field" type="email" name="email"
+                                        placeholder="Enter your email *" required="">
+                                </div>
+                            </div>
+                            <div class="form-input mt-4">
+                                <input class="contact-input-field" type="text" name="mobile"
+                                    placeholder="Enter your Phone Number *" required="">
+                            </div>
+                            <div class="form-input mt-4">
+                                <!--<label for="preferred-course">Preferred Course</label>-->
+                                <select id="preferred-course" name="preferred-course" class="contact-input-field">
+                                    <option class="option" value="">Select your course</option>
+                                    <option value="mbbs">MBBS</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="management">Management</option>
+                                    <option value="law">Law</option>
+                                    <option value="arts">Arts</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-input">
+                                <textarea class="contact-input-field" name="message" placeholder="Type your query here"
+                                    required=""></textarea>
+                            </div>
+                            <div class="text-left">
+                                <button type="submit" name="submit"
+                                    class="edu-wire-secondary-btn contact-submit-btn">Send
+                                    Message</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="contact-image column">
+                        <img src="https://www.shutterstock.com/image-photo/call-center-profile-woman-headset-600nw-2466625829.jpg"
+                            class="img-fluid">
+                        <!--assets/images/contact-form-image.jpg-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of contact edu-wire  -->
+
+
+    <!-- services by eduwire  -->
+    <section class="content sec-padding">
+        <div>
+            <div class="heading text-center">
+                <h2 class="heading-section text-black">Our <span class="highlight-line">Services</span></h2>
+            </div>
+            <!-- Services Slider Section -->
+            <div class="services-slider-container">
+                <div class="swiper studySwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Slides -->
+                        <div class="swiper-slide service-slide">
+                            <div class="service-icon">
+                                <img src="assets/images/services/counseling.png" alt="Counseling" />
+                            </div>
+                            <h3 class="service-title">Counseling</h3>
+                            <p class="service-description">Personalized guidance to help you choose the right course and
+                                country.</p>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide service-slide">
+                            <div class="service-icon">
+                                <img src="assets/images/services/university.png" alt="University Selection">
+                            </div>
+                            <h3 class="service-title">University Selection</h3>
+                            <p class="service-description">Expert support in identifying universities that match your
+                                profile, preferences, and eligibility—ensuring the best fit for your academic journey.
+                            </p>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide service-slide">
+                            <div class="service-icon">
+                                <img src="assets/images/services/documentation.png" alt="Documentation">
+                            </div>
+                            <h3 class="service-title">Documentation & Application</h3>
+                            <p class="service-description">Assistance with compiling, reviewing, and submitting all
+                                required documents to ensure accuracy and completeness.</p>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide service-slide">
+                            <div class="service-icon">
+                                <img src="assets/images/services/ielts.png" alt="IELTS Preparation">
+                            </div>
+                            <h3 class="service-title">IELTS Preparation</h3>
+                            <p class="service-description">Comprehensive training programs including practice tests,
+                                tips, and strategies for all four sections of the IELTS exam.</p>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="swiper-slide service-slide">
+                            <div class="service-icon">
+                                <img src="assets/images/services/interview.png" alt="Interview Preparation">
+                            </div>
+                            <h3 class="service-title">Interview Preparation</h3>
+                            <p class="service-description">Mock interviews and coaching to boost your confidence and
+                                communication skills for university and visa interviews.</p>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div class="swiper-slide service-slide">
+                            <div class="service-icon">
+                                <img src="assets/images/services/visa.png" alt="Visa Assistance">
+                            </div>
+                            <h3 class="service-title">Visa Assistance</h3>
+                            <p class="service-description">End-to-end support in preparing your visa application and
+                                meeting all embassy requirements for a successful outcome.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="swiper-navigation">
+                        <button class="swiper-button-prev nav-button">
+                            <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg> -->
+                        </button>
+                        <button class="swiper-button-next nav-button">
+                            <!-- <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg> -->
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end of services by eduwire -->
+
+    <!-- universities edu-wire work with  -->
+    <section class="university-section sec-padding content dark-bg-section">
+        <div class="text-container">
+            <div class="heading text-center">
+                <!-- Contact our team  -->
+                <h2 class="heading-section text-white"><span class="highlight-line">Top Universities</span> We Work With
+                </h2>
+            </div>
+
+            <div class="university-grid">
+
+                <!-- Repeat this card block for each university -->
+                <div class="university-card">
+                    <img src="https://images.seeklogo.com/logo-png/6/1/hec-paris-logo-png_seeklogo-65984.png"
+                        alt="HEC Paris">
+                </div>
+
+                <div class="university-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaz3WqZURjfLYCxJObGk0Z1RZmuMaPl9FSwj_o9d16GkeCSiYp_iDsDg_8BKr181ZsF2I&amp;usqp=CAU"
+                        alt="ESSEC Business School">
+                </div>
+
+                <div class="university-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwcAOMEbebANt7rSde2QHjTWXndwe1VRDg7Ch0chrxebv97kiMvTjqqGup6ZGakZPUwHg&amp;usqp=CAU"
+                        alt="Paris-Saclay University">
+                </div>
+
+                <div class="university-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb1q64ymkZN5jz9af-KOhT0EDExvITQbBSqsDoCo3sTOy0K7Lv-MikjJW1c2HpTV9VcWM&amp;usqp=CAU"
+                        alt="Grenoble Ecole de Management">
+                </div>
+
+                <div class="university-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCEwQKrO2yI8dlQA4l82U4Q-1gHFVxewPvJQ&amp;s"
+                        alt="SKEMA Business School">
+                </div>
+
+                <!-- Add more logos below similarly -->
+
+            </div>
+        </div>
+    </section>
+    <!-- end of universities edu-wire work with  -->
+
+    <!-- top destination to study abroad  -->
+    <section class="destination-section">
+
+        <div class="heading text-center">
+            <!-- Contact our team  -->
+            <h2 class="heading-section text-black">Top Study Abroad<span class="highlight-line"> Destinations</span>
+            </h2>
+        </div>
+        <div class="horizontal-scroll-outer">
+            <div class="horizontal-scroll-inner">
+
+                <!-- Repeat for each country -->
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://media.istockphoto.com/id/616242056/photo/british-flag-big-ben-and-houses-of-parliament-london.jpg?s=612x612&w=0&k=20&c=3c5ZpafAsXAevRDs0dlTwn8wuErDjlYVqw1Cj0oRwMc=');">
+                        <div class="country-name">United Kingdom</div>
+                    </div>
+                    <div class="card-back">
+                        <p>The UK is home to some of the world’s top universities, offering globally recognized degrees
+                            and a rich academic tradition. With diverse courses and strong post-study opportunities,
+                            it’s a leading choice for international students.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://media.istockphoto.com/id/493283252/photo/city-embankment-at-night-with-illumination.jpg?s=612x612&w=0&k=20&c=9f1v2eBP4l5DQGWkLS-2DQiO4dgInJ9lCuFydASOEXY=');">
+                        <div class="country-name">Russia</div>
+                    </div>
+                    <div class="card-back">
+                        <p>Russia offers high-quality, affordable education in fields like engineering, medicine, and
+                            IT. With English-taught programs, modern campuses, and global recognition, it’s a great
+                            choice for international students seeking both academic excellence and cultural experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://www.avanse.com/blogs/images/15.jpg');">
+                        <div class="country-name">Canada</div>
+                    </div>
+                    <div class="card-back">
+                        <p>Canada is known for its world-class education, diverse campuses, and safe, welcoming
+                            environment. With globally recognized degrees and post-study work opportunities, it’s a top
+                            choice for international students.</p>
+                    </div>
+                </div>
+
+
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://static.toiimg.com/photo/49226469.cms');">
+                        <div class="country-name">Italy</div>
+                    </div>
+                    <div class="card-back">
+                        <p>Italy offers top-quality education in art, architecture, fashion, and science. With historic
+                            universities, affordable tuition, and a vibrant cultural scene, it’s an inspiring
+                            destination for international students.</p>
+                    </div>
+                </div>
+
+
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://sofiaadventures.com/wp-content/uploads/2019/11/shutterstock_294937295.jpg');">
+                        <div class="country-name">Romania</div>
+                    </div>
+                    <div class="card-back">
+                        <p>Romania offers affordable, high-quality education in medicine, engineering, and humanities.
+                            With English-taught programs and a rich cultural heritage, it’s an excellent choice for
+                            international students.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://media.istockphoto.com/id/1145422105/photo/eiffel-tower-aerial-view-paris.jpg?s=1024x1024&w=0&k=20&c=pfImhAa3F5kZS0j2Zycs5iagAL1OL1QRUmY1bityDTA=');">
+                        <div class="country-name">France</div>
+                    </div>
+                    <div class="card-back">
+                        <p>France combines academic excellence with rich culture and history. With affordable tuition,
+                            top-ranked universities, and programs in English, it’s a popular choice for international
+                            students.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-front"
+                        style="background-image: url('https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/germany-0.jpg');">
+                        <div class="country-name">Germany</div>
+                    </div>
+                    <div class="card-back">
+                        <p>Germany offers world-class education with low or no tuition fees, especially in engineering,
+                            science, and technology. Its globally recognized degrees and strong job prospects attract
+                            students worldwide.</p>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Add more destination-card elements -->
+
+            </div>
+        </div>
+    </section>
+    <!-- end of top destination to study abroad  -->
+
+    <!-- steps to study abroad -->
+    <section class="steps-section sec-padding content">
+        <div class="container">
+            <div class="heading text-center">
+                <h2 class="heading-section text-black">Steps to Study Abroad with <span
+                        class="highlight-line">Edu-Wire</span></h2>
+            </div>
+
+            <div class="steps-animation-container">
+                <div class="steps-track">
+                    <!-- Step 1 -->
+                    <div class="step-card active" data-step="1">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3 class="step-title">Free Consultation</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Schedule a free consultation with our experts to discuss your study abroad goals.</p>
+                            <button class="edu-wire-btn"><a href="#" class="hero-btn">Book Free Counseling</a></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card" data-step="2">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3 class="step-title">University Selection</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Get personalized guidance on selecting the right university and course for you.</p>
+                            <button class="edu-wire-btn"><a href="#" class="hero-btn">Book Free Counseling</a></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card" data-step="3">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3 class="step-title">Application Process</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Receive assistance with the application process, including document preparation.</p>
+                            <button class="edu-wire-btn"><a href="#" class="hero-btn">Book Free Counseling</a></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card" data-step="4">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3 class="step-title">Visa Assistance</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Get expert help with your visa application and interview preparation.</p>
+                            <button class="edu-wire-btn"><a href="#" class="hero-btn">Book Free Counseling</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="steps-image">
+                    <img src="https://img.freepik.com/free-photo/rear-view-hispanic-young-woman-man-looking-countries-globe-while-planning-their-trip-abroad-with-travel-agent_662251-2206.jpg"
+                        alt="Study abroad consultation">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of steps to study abroad  -->
+    <section class="section-courses">
+        <div class="container">
+
+            <div class="heading text-center">
+
+                <h2 class="heading-section text-black">Explore
+                    <span class="highlight-line"> Trending Courses</span> by Interest
+                </h2>
+            </div>
+            <div class="course-nav" id="courseNav">
+                <button class="active" data-target="tech">Technology</button>
+                <button data-target="business">Business</button>
+                <button data-target="health">Health</button>
+                <button data-target="design">Design</button>
+                <button data-target="science">Science</button>
+            </div>
+
+            <!-- Course Content Sections -->
+            <div class="course-content active" id="tech">
+                <div class="course-box">
+                    <h4>Computer Science & IT</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Data Science & AI</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Cybersecurity</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Software Engineering</h4>
+                </div>
+            </div>
+
+            <div class="course-content" id="business">
+                <div class="course-box">
+                    <h4>MBA & Executive Programs</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Finance & Accounting</h4>
+                </div>
+                <div class="course-box">
+                    <h4>International Business</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Marketing & HR</h4>
+                </div>
+            </div>
+
+            <div class="course-content" id="health">
+                <div class="course-box">
+                    <h4>MBBS / MD</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Pharmacy</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Nursing</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Public Health</h4>
+                </div>
+            </div>
+
+            <div class="course-content" id="design">
+                <div class="course-box">
+                    <h4>Architecture</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Fashion Design</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Graphic Design</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Interior Design</h4>
+                </div>
+            </div>
+
+            <div class="course-content" id="science">
+                <div class="course-box">
+                    <h4>Biotechnology</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Environmental Science</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Food Technology</h4>
+                </div>
+                <div class="course-box">
+                    <h4>Physics & Chemistry</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- eduwire cta section  -->
+
+    <section class="eduwire-cta-section">
+        <div class="eduwire-cta-container">
+            <div class="eduwire-cta-content">
+                <div class="eduwire-cta-text">
+                    <h2 class="eduwire-cta-heading">
+                        Make Your Study Abroad Dreams a Reality with EduWire!
+                    </h2>
+                    <p class="eduwire-cta-description">
+                        Explore top universities worldwide and get expert guidance from application to visa and beyond.
+                        Start your global education journey today — we’ve got your back!
+                    </p>
+
+                    <div class="eduwire-cta-contact">
+                        <p><i class="fas fa-phone-alt"></i> <strong>Call/WhatsApp:</strong> <a
+                                href="tel:+919300812637">9300812637</a></p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a
+                                href="mailto:info@eduwireoverseas.com">info@eduwireoverseas.com</a></p>
+                        <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://www.edu-wire.com/"
+                                target="_blank">www.eduwireoverseas.com</a></p>
+                    </div>
+
+                    <!-- Book Free Counseling Button -->
+                    <a href="#" class="eduwire-cta-btn" id="openModal">Book Free Counseling</a>
+
+                </div>
+                <div class="eduwire-cta-image">
+                    <img src="/assets/images/study-abroad-girl.png" alt="World Map with Route Lines - Study Abroad" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of eduwire cta section  -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <div class="nav-brand">
+                    <a href="#" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg" alt="edu-wire logo">
+                    </a>
+                </div>
+                <p class="footer-tagline">Welcome to Edu Wire, a platform dedicated to facilitating higher education
+                    pursuits overseas.
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Study Abroad</a></li>
+                    <li><a href="#">Visa Assistance</a></li>
+                    <li><a href="#">Test Preparation</a></li>
+                    <li><a href="#">Career Counseling</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Edu Street, Mumbai, India</p>
+                <p>+91 98765 43210</p>
+                <p>info@eduwire.com</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Edu-Wire Consultancy. All rights reserved.
+        </div>
+    </footer>
+
+
+
+
+    <script src="script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- lenis cdn  -->
+    <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        // smooth scrolling js 
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+
+
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        const studySwiper = new Swiper(".studySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+
+        // horizontal scroll for top destination to study abroad 
+        const container = document.querySelector(".horizontal-scroll-inner");
+        const cards = document.querySelectorAll(".destination-card");
+
+        const totalWidth = container.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const cardStyle = getComputedStyle(cards[0]);
+        const cardGap = parseFloat(cardStyle.marginRight) || 32; // if you're using margin OR if using gap, set that
+
+        // Calculate how much to scroll so last card is fully visible + 2rem extra space
+        const scrollAmount = totalWidth - viewportWidth + cardGap;
+
+        gsap.to(container, {
+            x: () => -scrollAmount,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".destination-section",
+                start: "top top",
+                end: () => `+=${scrollAmount}`,
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+            },
+        });
+
+
+    </script>
+</body>
+
+</html>
