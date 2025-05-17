@@ -54,6 +54,7 @@ h3 {
     /* 43.2px */
     font-weight: 500;
     /* Semi‑bold */
+    margin: 1rem 0;
 }
 
 h4 {
@@ -184,6 +185,13 @@ input {
 
 }
 
+.sub-headings-eduwire{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    /* margin-bottom: 0.5rem; */
+}
+
 .text-white {
     color: #fff;
 }
@@ -210,6 +218,10 @@ input {
     align-items: center;
 }
 
+.page-section-heading{
+    margin-bottom: 3rem;
+}
+
 @media (max-width: 768px) {
 
     .section-flex {
@@ -224,6 +236,9 @@ input {
     }
     .steps-image{
         padding: 0 !important;
+    }
+    .sub-headings-eduwire{
+        font-size: 1.2rem;
     }
 }
 
@@ -1523,7 +1538,7 @@ select.contact-input-field option {
     /* padding: 20px; */
 }
 
-.course-nav button {
+.course-nav button, .section-nav-btn {
     padding: 15px 20px;
     border: none;
     background: #a2c4e082;
@@ -1534,7 +1549,7 @@ select.contact-input-field option {
     transition: all 0.3s ease;
 }
 
-.course-nav button.active {
+.course-nav button.active , .section-nav-btn.active {
     background: var(--primary-color);
     color: white;
 }
@@ -1867,4 +1882,102 @@ justify-content: center;
     .team-card{
         width: 100%;
     }
+}
+
+.section-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 12px 20px;
+  border-bottom: 2px solid var(--blue-border-color);
+  position: relative;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Table base styles */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin:1rem 0;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.info-table thead.primary-color {
+  background-color: var(--primary-color); /* primary color (blue) */
+  color: white;
+}
+
+.info-table th,
+.info-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 16px;
+}
+
+.info-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* faqs section  */
+.faq-item {
+  border: 2px solid var(--blue-border-color);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background-color: #a2c4e082;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-toggle {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 24px;
+  max-height: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-answer{
+  padding: 0 24px 20px;
+  max-height: 500px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+
+.faq-item.active span{
+    color: var(--primary-color);
 }

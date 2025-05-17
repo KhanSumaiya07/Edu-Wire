@@ -227,6 +227,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 });
 
+// accordion effect for faq section 
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    question.addEventListener("click", () => {
+      // Close other open items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains("active")) {
+          otherItem.classList.remove("active");
+        }
+      });
+      
+      // Toggle current item
+      item.classList.toggle("active");
+    });
+  });
+});
 
 // Dynamically inject country + flag items 
 
@@ -405,3 +424,59 @@ const navButtons = document.querySelectorAll('#courseNav button');
       document.getElementById(target).classList.add('active');
     });
   });
+
+
+
+// Smooth scroll & active button highlight
+const buttons = document.querySelectorAll('.nav-btn');
+const sections = document.querySelectorAll('section');
+
+function highlightCurrent() {
+  let scrollPos = window.scrollY + 120; // adjust for nav height
+
+  sections.forEach((sec) => {
+    if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+      let targetId = sec.getAttribute("id");
+
+      buttons.forEach((btn) => {
+        btn.classList.remove("active-btn");
+        if (btn.getAttribute("onclick") === `scrollToSection('${targetId}')`) {
+          btn.classList.add("active-btn");
+        }
+      });
+    }
+  });
+}
+
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+window.addEventListener("scroll", highlightCurrent);
+
+const nav = document.querySelector('.section-nav');
+const hero = document.querySelector('.hero');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      nav.classList.remove('sticky-nav');
+    } else {
+      nav.classList.add('sticky-nav');
+    }
+  },
+  { threshold: 0 }
+);
+
+observer.observe(hero);
+
+
+
+
+
+
+

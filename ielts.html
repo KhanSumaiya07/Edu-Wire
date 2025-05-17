@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts cdn  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="/index.html" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg"
+                        alt="edu-wire logo">
+                </a>
+            </div>
+
+            <div class="nav-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link active">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/about.html" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Our Services
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="/ielts.html">IELTS Training</a></li>
+                            <li><a href="#">Scholarship Guidance</a></li>
+                            <li><a href="#">Admission Guidance</a></li>
+                            <li><a href="#">Financial Assistance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Study Abroad
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                            </svg>
+                        </a>
+
+                        <div class="dropdown sub-dropdown">
+                            <!-- Left Column -->
+                            <ul class="submenu-list">
+                                <li class="submenu-trigger active" data-target="mbbs-submenu"><a href="#">MBBS
+                                        Abroad</a></li>
+                                <li class="submenu-trigger" data-target="europe-submenu"><a href="#">Study in Europe</a>
+                                </li>
+                                <li class="submenu-trigger" data-target="asia-submenu"><a href="#">English Speaking
+                                        Countries</a></li>
+                            </ul>
+
+                            <!-- Right Column -->
+                            <div class="submenu-content">
+                                <ul class="submenu active" id="mbbs-submenu"></ul>
+                                <ul class="submenu" id="europe-submenu"></ul>
+                                <ul class="submenu" id="asia-submenu"></ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blogs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-btn">
+                            <svg class="icon search-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="icon moon-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"
+                                fill="currentColor"></path>
+                        </svg>
+                        <svg class="icon sun-icon hidden" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </button> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- hero section   -->
+        <section class="content hero-section-eduwire content-center">
+            <div class="section-flex">
+                <div class="section-flex-child hero-content">
+
+                    <h1 class="hero-sec-heading">Prepare for <span class="highlight-line">IELTS, </span>Study Abroad
+                        with Confidence</h1>
+                    <p>Get expert IELTS coaching to improve your English skills and achieve the scores you need for
+                        universities abroad. Join our flexible, result-oriented preparation programs and take the first
+                        step toward your global education dream.</p>
+
+                    <button class="edu-wire-btn"><a href="#" class="hero-btn">Get Started Today</a></button>
+                </div>
+                <div class=" section-flex-child">
+                    <img src="" alt="About Edu-Wire">
+
+                    <!--assets/images/contact-form-image.jpg-->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Section Navigation Buttons -->
+    <div class="section-nav">
+        <button class="nav-btn section-nav-btn" onclick="scrollToSection('about')">About IELTS</button>
+        <button class="nav-btn section-nav-btn" onclick="scrollToSection('highlights')">Course Highlights</button>
+        <button class="nav-btn section-nav-btn" onclick="scrollToSection('importance')">Why IELTS</button>
+        <button class="nav-btn section-nav-btn" onclick="scrollToSection('about-ielts')">IELTS Test</button>
+        <!-- <button class="nav-btn section-nav-btn" onclick="scrollToSection('who')">Who Can Join</button> -->
+        <button class="nav-btn section-nav-btn" onclick="scrollToSection('faqs')">FAQs</button>
+        <button class="nav-btn section-nav-btn" onclick="scrollToSection('counseling')">Book Counseling</button>
+    </div>
+
+    <!-- Sections -->
+    <section id="about" class="sec-padding">
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">About Our<span class="highlight-line"> IELTS Preparation</span>
+            </h2>
+        </div>
+        <p>Our IELTS Preparation program is designed to help you achieve your desired band score with confidence. We
+            offer comprehensive training covering all four modules of the IELTS exam: Listening, Reading, Writing, and
+            Speaking.
+            <br>
+            Our expert instructors use the latest study materials and proven teaching methods to guide you step-by-step
+            through each section. You will benefit from personalized feedback, mock tests, and flexible learning options
+            including both online and classroom sessions.
+
+            Whether you are a beginner or looking to improve your score, our program is tailored to meet your individual
+            needs, helping you build language skills, test strategies, and exam confidence.
+        </p>
+    </section>
+
+    <section id="highlights" class="sec-padding">
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">Course <span class="highlight-line">Highlights</span></h2>
+        </div>
+
+        <div class="highlight-cards">
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Latest Study Material</h4>
+                <p>We provide updated study resources, practice papers, and official IELTS materials to keep you
+                    prepared with the latest test patterns and question types.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Certified IELTS Trainers</h4>
+                <p>Learn from experienced, certified trainers who specialize in IELTS coaching and have a proven record
+                    of guiding students to high band scores.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Mock Tests with Detailed Feedback</h4>
+                <p>Regular mock tests under real exam conditions, followed by one-on-one feedback sessions to track your
+                    progress and improvement areas.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Flexible Online & Offline Classes</h4>
+                <p>Choose between classroom sessions at our center or convenient online classes from home, with morning,
+                    evening, and weekend batches available.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Targeted Band Score Programs</h4>
+                <p>Customized preparation plans based on your desired band score, whether you're targeting a 6.5+ for
+                    study abroad or a 7.5+ for PR or migration.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Personalized Speaking & Writing Practice</h4>
+                <p>Dedicated sessions for the Speaking and Writing modules, including daily speaking practice, mock
+                    interviews, and personalized writing corrections.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">IELTS Test Booking Assistance</h4>
+                <p>Guidance through the official IELTS test registration process and help selecting test dates and
+                    formats that fit your application deadlines.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="importance" class="sec-padding">
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">
+                Why <span class="highlight-line">IELTS Matters </span>for Your Future
+            </h2>
+        </div>
+
+        <div class="highlight-cards">
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Trusted Worldwide</h4>
+                <p>IELTS is accepted by over <strong>10,000 universities, employers, and governments</strong> worldwide
+                    as proof of your English proficiency.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Academic Success</h4>
+                <p>Gain admission to top universities with an internationally recognized test score that validates your
+                    English skills.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Career Growth</h4>
+                <p>Open doors to global job markets and improve your professional opportunities by demonstrating your
+                    English language ability.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Visa & Immigration</h4>
+                <p>Meet language requirements easily for student, work, or immigration visas in English-speaking
+                    countries.</p>
+            </div>
+
+            <div class="highlight-card">
+                <h4 class="sub-headings-eduwire">Boost Your Confidence</h4>
+                <p>Prepare thoroughly and perform confidently in academic or professional settings abroad.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-ielts" class="sec-padding container">
+        <h2 class="page-section-heading text-black">
+            About<span class="highlight-line"> IELTS Test</span>
+        </h2>
+
+        <h3>Types of IELTS Tests</h3>
+        <p>There are two main versions:</p>
+        <table class="info-table">
+            <thead class="primary-color">
+                <tr>
+                    <th>Type</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>IELTS Academic</td>
+                    <td>For higher education or professional registration in an English-speaking environment</td>
+                </tr>
+                <tr>
+                    <td>IELTS General Training</td>
+                    <td>For migration to countries like Australia, Canada, New Zealand, UK or for work experience and
+                        training programs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>IELTS Test Format</h3>
+        <p>The test covers 4 skills:</p>
+        <table class="info-table">
+            <thead class="primary-color">
+                <tr>
+                    <th>Module</th>
+                    <th>Duration</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Listening</td>
+                    <td>30 minutes</td>
+                    <td>4 audio recordings, 40 questions</td>
+                </tr>
+                <tr>
+                    <td>Reading</td>
+                    <td>60 minutes</td>
+                    <td>3 sections, 40 questions (different for Academic &amp; General)</td>
+                </tr>
+                <tr>
+                    <td>Writing</td>
+                    <td>60 minutes</td>
+                    <td>2 tasks</td>
+                </tr>
+                <tr>
+                    <td>Speaking</td>
+                    <td>11–14 minutes</td>
+                    <td>Face-to-face interview</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Total Test Time:</strong> Around 2 hours 45 minutes</p>
+
+        <h3>IELTS Scoring</h3>
+        <p>Each skill is scored on a Band Scale of 0 to 9. You get an individual band score for each skill and an
+            overall band score (average of the four).</p>
+        <table class="info-table">
+            <thead class="primary-color">
+                <tr>
+                    <th>Band</th>
+                    <th>Skill Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9</td>
+                    <td>Expert</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Very Good</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Competent</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Modest</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Limited</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Extremely Limited</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Intermittent</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Non-user</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>Did not attempt the test</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Example:</strong><br>
+            Listening: 7.5, Reading: 7, Writing: 6.5, Speaking: 7<br>
+            Overall Band Score = (7.5 + 7 + 6.5 + 7) / 4 = 7
+        </p>
+    </section>
+
+
+
+    <!-- <section id="who" class="sec-padding container">
+    <h2 class="page-section-heading text-black">
+      Who Can<span class="highlight-line"> Join</span>
+    </h2>
+  
+  <p>
+    <strong>This course is perfect for:</strong>
+  </p>
+  <ul class="highlight-list">
+    <li><span class="icon">🎓</span> Students planning to apply to international universities.</li>
+    <li><span class="icon">🛂</span> Visa applicants preparing for migration or study abroad opportunities.</li>
+    <li><span class="icon">💼</span> Working professionals aiming to enhance their English communication for career growth.</li>
+  </ul>
+  <p>
+    <strong>If you want to boost your confidence and achieve your desired IELTS band score — this course is for you!</strong>
+  </p>
+</section> -->
+
+<!-- frequently asked questions  -->
+<section id="faq" class="sec-padding container">
+ 
+ <div class="heading text-center">
+            <h2 class="page-section-heading text-black">Frequently <span class="highlight-line">Asked Questions</span></h2>
+        </div>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>What is the IELTS test format?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      The IELTS test covers four modules: Listening, Reading, Writing, and Speaking, with a total duration of around 2 hours and 45 minutes.
+    </div>
+  </div>
+<div class="faq-item">
+  <div class="faq-question">
+    <span>What is the IELTS test format?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    The IELTS test covers four modules: Listening, Reading, Writing, and Speaking, with a total duration of around 2 hours and 45 minutes.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>How long is the IELTS score valid?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    IELTS scores are valid for 2 years from the date of your test result.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>Can I retake the IELTS test?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    Yes! You can retake the IELTS test as many times as you like. No restrictions.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>Which countries accept IELTS scores?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    IELTS scores are accepted by over 11,000 organizations in countries like the UK, Australia, Canada, New Zealand, USA, and many European and Asian countries.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>What is the difference between IELTS Academic and IELTS General Training?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    IELTS Academic is for study abroad and professional registration, while IELTS General Training is for migration, work experience, and training programs.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>How is the IELTS Speaking test conducted?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    The Speaking test is a face-to-face interview with a certified examiner, lasting 11–14 minutes, divided into three parts: introduction, individual speech, and discussion.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>How are IELTS scores calculated?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    Each section is scored on a Band Scale of 0 to 9. The overall score is the average of the four module scores, rounded to the nearest half or whole band.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>How can I register for the IELTS test?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    You can register online through the official IELTS website or authorized test centers in your city. Choose your date, location, and module type.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+    <span>Is there a minimum score required for visa applications?</span>
+    <span class="faq-toggle">+</span>
+  </div>
+  <div class="faq-answer">
+    Yes — each country and visa type has different minimum IELTS score requirements. Check the official immigration website of the country you're applying to.
+  </div>
+</div>
+
+ 
+</section>
+
+ 
+
+    <section id="counseling" class="eduwire-cta-section">
+        <div class="eduwire-cta-container">
+            <div class="eduwire-cta-content">
+                <div class="eduwire-cta-text">
+                    <h2 class="eduwire-cta-heading">
+                        Make Your Study Abroad Dreams a Reality with EduWire!
+                    </h2>
+                    <p class="eduwire-cta-description">
+                        Explore top universities worldwide and get expert guidance from application to visa and beyond.
+                        Start your global education journey today — we’ve got your back!
+                    </p>
+
+                    <div class="eduwire-cta-contact">
+                        <p><i class="fas fa-phone-alt"></i> <strong>Call/WhatsApp:</strong> <a
+                                href="tel:+919300812637">9300812637</a></p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a
+                                href="mailto:info@eduwireoverseas.com">info@eduwireoverseas.com</a></p>
+                        <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://www.edu-wire.com/"
+                                target="_blank">www.eduwireoverseas.com</a></p>
+                    </div>
+
+                    <!-- Book Free Counseling Button -->
+                    <a href="#" class="eduwire-cta-btn" id="openModal">Book Free Counseling</a>
+
+                </div>
+                <div class="eduwire-cta-image">
+                    <img src="/assets/images/study-abroad-girl.png" alt="World Map with Route Lines - Study Abroad" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of eduwire cta section  -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <div class="nav-brand">
+                    <a href="#" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg" alt="edu-wire logo">
+                    </a>
+                </div>
+                <p class="footer-tagline">Welcome to Edu Wire, a platform dedicated to facilitating higher education
+                    pursuits overseas.
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Study Abroad</a></li>
+                    <li><a href="#">Visa Assistance</a></li>
+                    <li><a href="#">Test Preparation</a></li>
+                    <li><a href="#">Career Counseling</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Edu Street, Mumbai, India</p>
+                <p>+91 98765 43210</p>
+                <p>info@eduwire.com</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Edu-Wire Consultancy. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- lenis cdn  -->
+    <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+
+
+
+        // smooth scrolling js 
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+
+
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        const studySwiper = new Swiper(".studySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+
+        // horizontal scroll for top destination to study abroad 
+        const container = document.querySelector(".horizontal-scroll-inner");
+        const cards = document.querySelectorAll(".destination-card");
+
+        const totalWidth = container.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const cardStyle = getComputedStyle(cards[0]);
+        const cardGap = parseFloat(cardStyle.marginRight) || 32; // if you're using margin OR if using gap, set that
+
+        // Calculate how much to scroll so last card is fully visible + 2rem extra space
+        const scrollAmount = totalWidth - viewportWidth + cardGap;
+
+        gsap.to(container, {
+            x: () => -scrollAmount,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".destination-section",
+                start: "top top",
+                end: () => `+=${scrollAmount}`,
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+            },
+        });
+
+
+    </script>
+</body>
+
+</html>
