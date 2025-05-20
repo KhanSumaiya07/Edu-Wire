@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts cdn  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg"
+                        alt="edu-wire logo">
+                </a>
+            </div>
+
+            <div class="nav-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Our Services
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="ielts.html">IELTS Training</a></li>
+                            <li><a href="scholarship.html">Scholarship Guidance</a></li>
+                            <li><a href="admission.html">Admission Guidance</a></li>
+                            <li><a href="#">Financial Assistance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Study Abroad
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                            </svg>
+                        </a>
+
+                        <div class="dropdown sub-dropdown">
+                            <!-- Left Column -->
+                            <ul class="submenu-list">
+                                <li class="submenu-trigger active" data-target="mbbs-submenu"><a href="#">MBBS
+                                        Abroad</a></li>
+                                <li class="submenu-trigger" data-target="europe-submenu"><a href="#">Study in Europe</a>
+                                </li>
+                                <li class="submenu-trigger" data-target="asia-submenu"><a href="#">English Speaking
+                                        Countries</a></li>
+                            </ul>
+
+                            <!-- Right Column -->
+                            <div class="submenu-content">
+                                <ul class="submenu active" id="mbbs-submenu"></ul>
+                                <ul class="submenu" id="europe-submenu"></ul>
+                                <ul class="submenu" id="asia-submenu"></ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blogs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-btn">
+                            <svg class="icon search-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="icon moon-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"
+                                fill="currentColor"></path>
+                        </svg>
+                        <svg class="icon sun-icon hidden" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </button> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <main class="sec-padding">
+    <!-- Hero section: Study MBBS in Italy -->
+    <section class="content hero-section-eduwire content-center">
+        <div class="section-flex">
+            
+            <!-- Text Content -->
+            <div class="section-flex-child hero-content">
+                <h1 class="hero-sec-heading">
+                    Study MBBS in <span class="highlight-line">Italy</span> with EduWire
+                </h1>
+                <p>
+                    Affordable, Globally Recognized Medical Education in the Heart of Europe!
+                    Italy offers top-ranked MBBS programs taught in English, with international accreditation and a rich cultural experience. 
+                    Let <strong>EduWire Overseas Education</strong> be your reliable partner in securing your future in medicine.
+                </p>
+
+                <button class="edu-wire-btn">
+                    <a href="#contact" class="hero-btn">Get Free Counselling</a>
+                </button>
+            </div>
+
+            <!-- Image -->
+            <div class="section-flex-child">
+                <img src="assets/images/mbbs-italy-hero.jpg" alt="Study MBBS in Italy">
+            </div>
+
+        </div>
+    </section>
+</main>
+
+
+
+    <!-- about financial assistant  -->
+    <section id="about" class="sec-padding dark-bg-section">
+        <div class="heading text-center">
+            <h2 class="heading-section text-black">About<span class="highlight-line"> Italy</span>
+            </h2>
+        </div>
+
+        <div class="section-flex">
+            <div class="about-ielts section-flex-child about-image">
+                <img src="https://cdn.britannica.com/82/195482-050-2373E635/Amalfi-Italy.jpg"
+                    alt="About Edu-Wire">
+            </div>
+
+            <div class="section-flex-child about-content">
+              <ul class="country-list-bullet">
+    <li>
+      <p>Italy, officially the Italian Republic, is located in Southern Europe. It shares borders with France, Switzerland, Austria, and Slovenia, and is surrounded by the Mediterranean Sea, giving it a unique cultural and historical heritage.</p>
+    </li>
+    <li>
+      <p>Italy is known for its rich cultural history, art, architecture, and contributions to science and medicine. The country offers a diverse environment, from the Alps in the north to the coastal regions and beautiful islands in the south.</p>
+    </li>
+    <li>
+      <p>Italy is considered one of the safest countries in Europe, with a high standard of living and a strong emphasis on education and healthcare, making it an attractive destination for international students.</p>
+    </li>
+    <li>
+      <p>Italy is a member of the European Union and the Schengen Area, allowing MBBS students to travel freely across Europe. It provides quality education, globally recognized degrees, and opportunities for further specialization within Europe.</p>
+    </li>
+    <li>
+      <p>The country boasts a lively cultural scene with world-famous cuisine, music, fashion, and festivals, offering students a rich and fulfilling experience outside the classroom.</p>
+    </li>
+  </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- frequently asked questions  -->
+    <section id="faq" class="sec-padding container">
+
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">Frequently <span class="highlight-line">Asked Questions</span>
+            </h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the IELTS test format?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                The IELTS test covers four modules: Listening, Reading, Writing, and Speaking, with a total duration of
+                around 2 hours and 45 minutes.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the IELTS test format?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                The IELTS test covers four modules: Listening, Reading, Writing, and Speaking, with a total duration of
+                around 2 hours and 45 minutes.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How long is the IELTS score valid?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                IELTS scores are valid for 2 years from the date of your test result.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I retake the IELTS test?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes! You can retake the IELTS test as many times as you like. No restrictions.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Which countries accept IELTS scores?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                IELTS scores are accepted by over 11,000 organizations in countries like the UK, Australia, Canada, New
+                Zealand, USA, and many European and Asian countries.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the difference between IELTS Academic and IELTS General Training?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                IELTS Academic is for study abroad and professional registration, while IELTS General Training is for
+                migration, work experience, and training programs.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How is the IELTS Speaking test conducted?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                The Speaking test is a face-to-face interview with a certified examiner, lasting 11–14 minutes, divided
+                into three parts: introduction, individual speech, and discussion.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How are IELTS scores calculated?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Each section is scored on a Band Scale of 0 to 9. The overall score is the average of the four module
+                scores, rounded to the nearest half or whole band.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I register for the IELTS test?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                You can register online through the official IELTS website or authorized test centers in your city.
+                Choose your date, location, and module type.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is there a minimum score required for visa applications?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes — each country and visa type has different minimum IELTS score requirements. Check the official
+                immigration website of the country you're applying to.
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <section id="counseling" class="eduwire-cta-section">
+        <div class="eduwire-cta-container">
+            <div class="eduwire-cta-content">
+                <div class="eduwire-cta-text">
+                    <h2 class="eduwire-cta-heading">
+                        Make Your Study Abroad Dreams a Reality with EduWire!
+                    </h2>
+                    <p class="eduwire-cta-description">
+                        Explore top universities worldwide and get expert guidance from application to visa and beyond.
+                        Start your global education journey today — we’ve got your back!
+                    </p>
+
+                    <div class="eduwire-cta-contact">
+                        <p><i class="fas fa-phone-alt"></i> <strong>Call/WhatsApp:</strong> <a
+                                href="tel:+919300812637">9300812637</a></p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a
+                                href="mailto:info@eduwireoverseas.com">info@eduwireoverseas.com</a></p>
+                        <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://www.edu-wire.com/"
+                                target="_blank">www.eduwireoverseas.com</a></p>
+                    </div>
+
+                    <!-- Book Free Counseling Button -->
+                    <a href="#" class="eduwire-cta-btn" id="openModal">Book Free Counseling</a>
+
+                </div>
+                <div class="eduwire-cta-image">
+                    <img src="/assets/images/study-abroad-girl.png" alt="World Map with Route Lines - Study Abroad" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of eduwire cta section  -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <div class="nav-brand">
+                    <a href="#" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg" alt="edu-wire logo">
+                    </a>
+                </div>
+                <p class="footer-tagline">Welcome to Edu Wire, a platform dedicated to facilitating higher education
+                    pursuits overseas.
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Study Abroad</a></li>
+                    <li><a href="#">Visa Assistance</a></li>
+                    <li><a href="#">Test Preparation</a></li>
+                    <li><a href="#">Career Counseling</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Edu Street, Mumbai, India</p>
+                <p>+91 98765 43210</p>
+                <p>info@eduwire.com</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Edu-Wire Consultancy. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- lenis cdn  -->
+    <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+
+
+
+        // smooth scrolling js 
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const mbbsCountries = [
-   { name: 'Italy', image: 'italy.png' },
+   { name: 'Italy', image: 'italy.png', url: 'mbbs-in-italy.html' },
   { name: 'Romania', image: 'romania.png' },
   { name: 'Bulgaria', image: 'bulgaria.png' },
   { name: 'Russia', image: 'russia.png' },
@@ -285,19 +285,22 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   function populateSubmenu(submenuId, countries) {
-    const submenu = document.getElementById(submenuId);
-    submenu.innerHTML = '';
-    countries.forEach(country => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-    <a href="#">
-      <img src="assets/images/flags/${country.image}" alt="${country.name} flag" style="width: 30px; height: 30px; margin-right: 8px; vertical-align: middle;">
-      ${country.name}
-    </a>
-  `;
-      submenu.appendChild(li);
-    });
-  }
+  const submenu = document.getElementById(submenuId);
+  submenu.innerHTML = '';
+  countries.forEach(country => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <a href="${country.url}">
+        ${country.image
+          ? `<img src="assets/images/flags/${country.image}" alt="${country.name} flag" style="width: 30px; height: 30px; margin-right: 8px; vertical-align: middle;">`
+          : `<span style="margin-right: 8px; font-size: 22px;">${country.flag}</span>`}
+        ${country.name}
+      </a>
+    `;
+    submenu.appendChild(li);
+  });
+}
+
 
   populateSubmenu('mbbs-submenu', mbbsCountries);
   populateSubmenu('europe-submenu', europeCountries);
