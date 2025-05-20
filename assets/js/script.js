@@ -264,10 +264,10 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const europeCountries = [
-    { name: 'Germany', flag: '🇩🇪' },
-    { name: 'France', flag: '🇫🇷' },
-    { name: 'Italy', flag: '🇮🇹' },
-    { name: 'Spain', flag: '🇪🇸' },
+    { name: 'Germany', image: 'germany.png' },
+    { name: 'France', image: 'france.png' },
+    { name: 'Italy', image: 'italy.png' },
+    { name: 'Spain', image: 'spain.png' },
     { name: 'Czech Republic', flag: '🇨🇿' },
     { name: 'Romania', flag: '🇷🇴' },
     { name: 'Latvia', flag: '🇱🇻' },
@@ -404,7 +404,43 @@ document.addEventListener('DOMContentLoaded', () => {
 //         });
 //     });
 // });
+gsap.registerPlugin(ScrollTrigger);
 
+const cards = document.querySelectorAll(".step-card");
+
+cards.forEach((card) => {
+  const content = card.querySelector(".step-content");
+
+  // Start with content hidden
+  gsap.set(content, { maxHeight: 0, opacity: 0 });
+
+  ScrollTrigger.create({
+    trigger: card,
+    start: "top center",
+    end: "bottom top",
+    onEnter: () => {
+      gsap.to(content, {
+         maxHeight: 0,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.in",
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(content, {
+       
+        maxHeight: content.scrollHeight, // or "none" if you want to expand fully
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    },
+    // Optional:
+    // markers: true,
+  });
+});
+
+  
 
 // courses 
 const navButtons = document.querySelectorAll('#courseNav button');
@@ -473,6 +509,8 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(hero);
+
+
 
 
 

@@ -175,6 +175,14 @@ input {
     border-radius: 40px;
 }
 
+.dark-bg-section h2, .dark-bg-section p{
+    color: #fff;
+}
+
+
+
+
+
 .sec-padding {
     padding: 60px !important;
 }
@@ -183,6 +191,10 @@ input {
     text-align: center;
     margin-bottom: 5rem;
 
+}
+
+.highlight-card{
+    margin-bottom: 1rem;
 }
 
 .sub-headings-eduwire{
@@ -356,11 +368,17 @@ body {
 
 /* Logo */
 .logo {
-    height: 40px;
+    /* height: 40px; */
     width: 160px;
     position: relative;
     display: inline-block;
     transition: var(--transition-medium);
+}
+
+.log a{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .logo img {
@@ -756,6 +774,9 @@ sub-dropdown {
 
 /* Responsive Design */
 @media (max-width: 968px) {
+    .logo{
+         width: 110px;
+    }
     .sub-dropdown {
         flex-direction: column;
     }
@@ -766,7 +787,7 @@ sub-dropdown {
 
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 60px;
         right: -100%;
         flex-direction: column;
         align-items: flex-start;
@@ -869,6 +890,14 @@ sub-dropdown {
 
     .has-dropdown.active .chevron-icon {
         transform: rotate(180deg);
+    }
+    .hero-image img{
+        width: 100% !important;
+        height: 100% !important;
+        /* object-fit: cover; */
+    }
+    .hero-image{
+        margin-bottom: 2rem;
     }
 
 }
@@ -983,8 +1012,17 @@ main {
     /* height: 100%; */
 }
 
-
-
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+.hero-image img{
+    width: 70%;
+    height: 90%;
+    object-fit: cover;
+}
 .hero-content {
     display: flex;
     flex-direction: column;
@@ -1318,11 +1356,11 @@ select.contact-input-field option {
     color: #1f2937;
 }
 
-.horizontal-scroll-outer {
+/* .horizontal-scroll-outer {
     overflow: hidden;
     position: relative;
     padding: 4rem 0;
-    /* optional for some vertical spacing */
+    
 }
 
 .horizontal-scroll-inner {
@@ -1330,7 +1368,19 @@ select.contact-input-field option {
     gap: 1rem;
     padding: 0 2rem;
     height: auto;
+} */
+
+.horizontal-scroll-outer {
+  overflow: hidden;
+  position: relative;
 }
+
+.horizontal-scroll-inner {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+}
+
 
 .destination-card {
     flex: 0 0 auto;
@@ -1413,14 +1463,11 @@ select.contact-input-field option {
 
 }
 
-/* .steps-wrapper {
-  position: sticky;
-  top: 100px;
-  height: 80vh;
-  display: flex;
+.steps-wrapper {
+   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-} */
+}
+
 
 .steps-image {
     /* flex: 1; */
@@ -1437,8 +1484,8 @@ select.contact-input-field option {
     padding: 20px;
     border-radius: 30px;
     border: 2px solid var(--blue-border-color);
-    position: relative;
-    z-index: 1;
+     transition: all 0.3s ease;
+    overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -1461,6 +1508,8 @@ select.contact-input-field option {
     align-items: center;
     font-weight: bold;
     font-size: 1.2rem;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .step-header-title {
@@ -1476,6 +1525,17 @@ select.contact-input-field option {
     transition: all 0.3s ease;
     margin: var(--content-margin, 0px);
     will-change: height, opacity, margin;
+} */
+
+.step-content{
+    overflow: hidden;
+}
+
+/* .step-card.collapsed .step-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
 } */
 
 .step-content-inner {
@@ -1528,8 +1588,18 @@ select.contact-input-field option {
 
 
 @media (max-width: 768px) {
+  .steps-wrapper {
+    position: sticky;
+    top: 0; /* or some spacing like 10px */
+    z-index: 10;
+    background-color: #fff; /* Make sure it doesn’t become transparent */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
-    .steps-section img {}
+  .steps-image {
+    display: none; /* Hide image for a better mobile UX if needed */
+  }
 }
 
 
@@ -1726,22 +1796,59 @@ select.contact-input-field option {
 .footer {
     background-color: #a2c4e082;
     color: var(--text-color);
-    padding: 50px 20px 20px;
+    /* padding: 50px 20px 20px; */
     font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr; /* First column is now wider */
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 40px 20px;
 }
+
+
+/* .flex-2{
+    flex: 2;
+}
+
+.flex-1{
+    flex: 1;
+} */
+
+.social-links{
+    padding:10px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    margin-top: 20px;
+}
+
+.social-links a{
+display: block;
+height: 35px;
+width: 35px;
+
+}
+
+.social-links a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .footer-section h3 {
     margin-bottom: 15px;
     font-size: 20px;
     color: var(--primary-color);
+}
+
+.footer-section h4{
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .footer-logo {
@@ -1808,10 +1915,9 @@ select.contact-input-field option {
 
 /* Responsive */
 @media (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+     .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 
     .footer-socials {
         justify-content: center;
@@ -2007,4 +2113,220 @@ justify-content: center;
 .faq-item.active {
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-scholarship-guidance .about-content{
+    display: flex;
+    align-items: center;
+}
+
+.about-scholarship-guidance img{
+    border-radius: 30px;
+}
+
+/* addmision process for study abroad section  */
+
+
+.admission-process-wrapper {
+  display: flex;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.sticky-image {
+  position: sticky;
+  top: 120px;
+  /* flex: 1;  */
+  width: 40%;
+}
+
+.sticky-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.process-steps {
+  /* flex: 2; */
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 60%;
+}
+
+.step {
+  padding: 20px;
+  border-left: 4px solid #2e83f2;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admission-process-wrapper {
+    flex-direction: column;
+  }
+
+  .sticky-image {
+    position: relative;
+    top: 0;
+  }
+
+  .process-steps {
+    gap: 60px;
+  }
+}
+
+
+
+.scroller {
+  height: 100vh;
+}
+
+.orange {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #753500;
+}
+
+.text {
+  color: #fff;
+}
+
+.black {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* background-color: #070707; */
+}
+
+.blue {
+  height: 100vh;
+  background-color: #00026d;
+}
+
+
+.text-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 450px;
+  height: 80vh;
+}
+
+.panel-text {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align:center;
+  background: #a2c4e082;
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: 2px solid var(--blue-border-color);
+  transform:translateY(100%);
+  opacity: 0;
+}
+
+/* .panel-text.blue-text {
+  color: blue;
+}
+
+.panel-text.red-text {
+  color: red;
+}
+
+.panel-text.purple-text {
+  color: purple;
+}
+
+.panel-text.orange-text {
+  color: orange;
+} */
+
+
+
+
+
+
+.p-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 450px;
+  height: 70vh;
+}
+
+.panel {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/5ed12171d9d512cb2feead83_5.jpg");
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.panel._2 {
+  z-index: 1;
+  background-image: url("../images/5f5a5b3515c4dd0c2c455925_110642301_938622823267359_7859124022958180678_n201.jpg");
+}
+
+.panel.blue {
+  z-index: auto;
+  background-image: url("https://wp-aberdeen.s3.amazonaws.com/wp-content/uploads/2014/11/10054547/bigstock-Woman-meeting-banker.jpg");
+}
+
+.panel.red {
+  z-index: auto;
+  background-image: url("https://media.licdn.com/dms/image/v2/D5622AQEOD89EtE85xQ/feedshare-shrink_800/feedshare-shrink_800/0/1732181159016?e=2147483647&v=beta&t=JyC5f5AZmpA_bkjPTZl4fxbBZenBKuikJTRdP-tGIoI");
+}
+
+.panel.orange {
+  z-index: auto;
+  background-image:url("https://img.freepik.com/free-photo/young-teacher-telling-two-students-about-corporate-budgeting_1262-15357.jpg?uid=R199818109&ga=GA1.1.1786599389.1747044360&semt=ais_hybrid&w=740");
+}
+
+.panel.purple {
+  z-index: auto;
+  background-image:url("https://media.istockphoto.com/id/636172762/photo/businessman-checking-documents-at-table.jpg?s=612x612&w=0&k=20&c=h3zhil-_8pOR1rsMedOIuPtQreadc06W6v0_JH22zdA=");
 }
