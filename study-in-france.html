@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- google fonts cdn  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--
+    
+    cdn link for font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand logo">
+                <a href="index.html"><img src="assets/images/Edu-wire-log.png" alt="edu-wire logo">
+                </a>
+            </div>
+
+            <div class="nav-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Our Services
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="ielts.html">IELTS Training</a></li>
+                            <li><a href="scholarship.html">Scholarship Guidance</a></li>
+                            <li><a href="admission.html">Admission Guidance</a></li>
+                            <li><a href="financial.html">Financial Assistance</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">
+                            Study Abroad
+                            <svg class="icon chevron-icon" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                            </svg>
+                        </a>
+
+                        <div class="dropdown sub-dropdown">
+                            <!-- Left Column -->
+                            <ul class="submenu-list">
+                                <li class="submenu-trigger active" data-target="mbbs-submenu"><a href="#">MBBS
+                                        Abroad</a></li>
+                                <li class="submenu-trigger" data-target="europe-submenu"><a href="#">Study in Europe</a>
+                                </li>
+                                <li class="submenu-trigger" data-target="asia-submenu"><a href="#">English Speaking
+                                        Countries</a></li>
+                            </ul>
+
+                            <!-- Right Column -->
+                            <div class="submenu-content">
+                                <ul class="submenu active" id="mbbs-submenu"></ul>
+                                <ul class="submenu" id="europe-submenu"></ul>
+                                <ul class="submenu" id="asia-submenu"></ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">Blogs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-btn">
+                            <svg class="icon search-icon" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- <button class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="icon moon-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"
+                                fill="currentColor"></path>
+                        </svg>
+                        <svg class="icon sun-icon hidden" viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </button> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="sec-padding">
+        <!-- Hero section: Study MBBS in Italy -->
+        <section class="content hero-section-eduwire content-center">
+            <div class="section-flex">
+
+                <!-- Text Content -->
+                <div class="section-flex-child hero-content">
+                    <h1 class="hero-sec-heading">
+                        Study MBBS in <span class="highlight-line">Italy</span> with EduWire
+                    </h1>
+                    <p>
+                        Affordable, Globally Recognized Medical Education in the Heart of Europe!
+                        Italy offers top-ranked MBBS programs taught in English, with international accreditation and a
+                        rich cultural experience.
+                        Let <strong>EduWire Overseas Education</strong> be your reliable partner in securing your future
+                        in medicine.
+                    </p>
+
+                    <button class="edu-wire-btn">
+                        <a href="#contact" class="hero-btn">Get Free Counselling</a>
+                    </button>
+                </div>
+
+                <!-- Image -->
+                <div class="section-flex-child">
+                    <img src="assets/images/mbbs-italy-hero.jpg" alt="Study MBBS in Italy">
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+
+<!-- about country  -->
+<section id="about" class="sec-padding dark-bg-section">
+    <div class="heading text-center">
+        <h2 class="heading-section text-black">About<span class="highlight-line"> France</span>
+        </h2>
+    </div>
+
+    <div class="section-flex">
+        <div class="about-ielts section-flex-child about-image">
+            <img src="https://cdn.britannica.com/10/9410-050-0C5AB353/Eiffel-Tower-Seine-River-Paris.jpg" alt="About Edu-Wire">
+        </div>
+
+        <div class="section-flex-child about-content about-country-list">
+            <ul class="country-list-bullet">
+                <li>
+                    <p>France, officially the French Republic, is located in Western Europe. It shares borders with several countries including Germany, Belgium, Italy, and Spain, and is renowned for its rich history, cultural influence, and architectural marvels.</p>
+                </li>
+                <li>
+                    <p>France is globally recognized for its academic excellence, particularly in fields such as business, fashion, arts, science, and technology. It is home to some of the world’s top universities and grandes écoles.</p>
+                </li>
+                <li>
+                    <p>France offers affordable tuition fees at public universities and a high standard of living with strong healthcare and social support systems, making it a popular choice among international students.</p>
+                </li>
+                <li>
+                    <p>As a member of the European Union and the Schengen Area, France allows students to travel freely within Europe and offers numerous opportunities for internships and career growth across the continent.</p>
+                </li>
+                <li>
+                    <p>Students in France enjoy a vibrant cultural life, from world-famous cuisine and wines to iconic fashion, music festivals, museums, and historical landmarks like the Eiffel Tower and the Louvre.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <!-- why study mbbs in italy  -->
+    <section id="why-choose-mbbs" class="sec-padding">
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">
+                Why Choose <span class="highlight-line">MBBS in Italy?</span>
+            </h2>
+        </div>
+
+        <div class="highlight-cards">
+            <div class="highlight-card why-choose-mbbs-card">
+                <div class="why-choose-icons"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <h4 class="sub-headings-eduwire">Government Scholarships</h4>
+                    <p>Public universities in Italy offer 100% tuition fee waivers and scholarships with monthly
+                        stipends,
+                        making education affordable for international students.</p>
+                </div>
+            </div>
+
+            <div class="highlight-card why-choose-mbbs-card">
+                <div class="why-choose-icons"><i class="fas fa-money-bill-wave"></i></div>
+                <div>
+                    <h4 class="sub-headings-eduwire">Low or No Tuition Fees</h4>
+                    <p>Many Italian medical universities offer MBBS programs with very low or zero tuition fees for
+                        eligible
+                        international students, reducing the financial burden.</p>
+                </div>
+            </div>
+
+            <div class="highlight-card why-choose-mbbs-card">
+                <div class="why-choose-icons"><i class="fas fa-language"></i></div>
+                <div>
+                    <h4 class="sub-headings-eduwire">English Medium Instruction</h4>
+                    <p>Several top universities offer the MBBS (MD) program entirely in English, making it ideal for
+                        international students who don’t speak Italian.</p>
+                </div>
+            </div>
+
+            <div class="highlight-card why-choose-mbbs-card">
+                <div class="why-choose-icons"><i class="fas fa-globe"></i></div>
+                <div>
+                    <h4 class="sub-headings-eduwire">Globally Recognized Degrees</h4>
+                    <p>Degrees from Italian medical universities are recognized by WHO, NMC (MCI), ECFMG, WFME, and
+                        other
+                        global bodies, enabling graduates to practice medicine worldwide.</p>
+                </div>
+            </div>
+
+            <div class="highlight-card why-choose-mbbs-card">
+                <div class="why-choose-icons"><i class="fas fa-landmark"></i></div>
+                <div>
+                    <h4 class="sub-headings-eduwire">Cultural &amp; Academic Exposure</h4>
+                    <p>Studying in Italy means living in a culturally rich environment with modern infrastructure,
+                        historical cities, and access to leading hospitals for clinical exposure.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- top leading universities in italy  -->
+    <section id="why-choose-mbbs" class="sec-padding">
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">
+                Top Leading <span class="highlight-line">Universities in Italy</span>
+            </h2>
+        </div>
+       <div class="universities-stack-container">
+         <div id="pinPanel" class="pin-panel universities-stack">
+            <!-- University of Milan -->
+            <div class="top-university-container">
+                <div class="top-university-card">
+                    <h3>University of Milan</h3>
+                    <p>
+                        The University of Milan, established in 1924, is one of the leading public universities in Italy
+                        and
+                        is renowned for its high-quality education and research. It offers a wide range of academic
+                        disciplines, including Medicine and Surgery, taught in both Italian and English for
+                        international
+                        students.
+                    </p>
+                    <p>Known for its vibrant campus and extensive research facilities, the university collaborates with
+                        global institutions and offers a multicultural learning environment. Its Faculty of Medicine is
+                        particularly prestigious and provides rigorous clinical and theoretical training to future
+                        medical
+                        professionals.</p>
+                </div>
+                <div class="universities-wrapper">
+                    <div class="university-cost-study">
+                        <h4>Cost to Study MBBS</h4>
+                        <table class="info-table">
+                            <thead class="primary-color">
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Administrative Fee</th>
+                                    <th>Application Fee</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1st Year</td>
+                                    <td>€ 4,000</td>
+                                    <td>€ 2,500</td>
+                                    <td>€ 30</td>
+                                    <td>€ 6,530</td>
+                                </tr>
+                                <tr>
+                                    <td>2nd Year</td>
+                                    <td>€ 4,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 4,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3rd Year</td>
+                                    <td>€ 4,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 4,000</td>
+                                </tr>
+                                <tr>
+                                    <td>4th Year</td>
+                                    <td>€ 4,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 4,000</td>
+                                </tr>
+                                <tr>
+                                    <td>5th Year</td>
+                                    <td>€ 4,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 4,000</td>
+                                </tr>
+                                <tr>
+                                    <td>6th Year</td>
+                                    <td>€ 4,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 4,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="university-image">
+                        <img src="https://cdn.britannica.com/82/195482-050-2373E635/Amalfi-Italy.jpg"
+                            alt="University of Milan">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sapienza University of Rome -->
+            <div class="top-university-container">
+                <div class="top-university-card">
+                    <h3>Sapienza University of Rome</h3>
+                    <p>
+                        Sapienza University of Rome, founded in 1303, is one of the oldest and largest universities in
+                        Europe. With a strong reputation for academic excellence, the university offers a wide array of
+                        programs including a highly regarded Medicine and Surgery course for international students.
+                    </p>
+                    <p>
+                        Its Faculty of Medicine is known for its rigorous curriculum, modern research facilities, and
+                        partnerships with top hospitals for clinical training. The university's location in Rome
+                        provides students with a rich cultural and academic experience, blending history with
+                        innovation.
+                    </p>
+                </div>
+                <div class="universities-wrapper">
+                    <div class="university-cost-study">
+                        <h4>Cost to Study MBBS</h4>
+                        <table class="info-table">
+                            <thead class="primary-color">
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Administrative Fee</th>
+                                    <th>Application Fee</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1st Year</td>
+                                    <td>€ 3,000</td>
+                                    <td>€ 2,500</td>
+                                    <td>€ 30</td>
+                                    <td>€ 5,530</td>
+                                </tr>
+                                <tr>
+                                    <td>2nd Year</td>
+                                    <td>€ 3,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3rd Year</td>
+                                    <td>€ 3,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,000</td>
+                                </tr>
+                                <tr>
+                                    <td>4th Year</td>
+                                    <td>€ 3,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,000</td>
+                                </tr>
+                                <tr>
+                                    <td>5th Year</td>
+                                    <td>€ 3,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,000</td>
+                                </tr>
+                                <tr>
+                                    <td>6th Year</td>
+                                    <td>€ 3,000</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="university-image">
+                        <img src="https://images.shiksha.com/mediadata/images/1453289462phpq2gbwh.jpeg"
+                            alt="Sapienza University of Rome">
+                    </div>
+                </div>
+            </div>
+
+            <!-- University of Bologna -->
+            <div class="top-university-container">
+                <div class="top-university-card">
+                    <h3>Alma Mater Studiorum – Università di Bologna</h3>
+                    <p>
+                        Founded in 1088, Alma Mater Studiorum – Università di Bologna is widely recognized as the oldest
+                        university in the Western world. It has maintained its reputation for academic excellence and
+                        innovation over the centuries, offering a comprehensive range of undergraduate, graduate, and
+                        doctoral programs.
+                    </p>
+                    <p>
+                        The university's School of Medicine provides a top-tier international program in Medicine and
+                        Surgery, taught in English. It combines traditional academic rigor with modern facilities and
+                        clinical training at some of Italy's leading hospitals.
+                    </p>
+                </div>
+                <div class="universities-wrapper">
+                    <div class="university-cost-study">
+                        <h4>Cost to Study MBBS</h4>
+                        <table class="info-table">
+                            <thead class="primary-color">
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Administrative Fee</th>
+                                    <th>Application Fee</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1st Year</td>
+                                    <td>€ 3,500</td>
+                                    <td>€ 2,500</td>
+                                    <td>€ 30</td>
+                                    <td>€ 6,030</td>
+                                </tr>
+                                <tr>
+                                    <td>2nd Year</td>
+                                    <td>€ 3,500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,500</td>
+                                </tr>
+                                <tr>
+                                    <td>3rd Year</td>
+                                    <td>€ 3,500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,500</td>
+                                </tr>
+                                <tr>
+                                    <td>4th Year</td>
+                                    <td>€ 3,500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,500</td>
+                                </tr>
+                                <tr>
+                                    <td>5th Year</td>
+                                    <td>€ 3,500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,500</td>
+                                </tr>
+                                <tr>
+                                    <td>6th Year</td>
+                                    <td>€ 3,500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 3,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="university-image">
+                        <img src="assets/images/universities/university-bologna.jpg"
+                            alt="Alma Mater Studiorum – Università di Bologna">
+                    </div>
+                </div>
+            </div>
+
+            <!-- University of Padua -->
+            <div class="top-university-container">
+                <div class="top-university-card">
+                    <h3>University of Padua</h3>
+                    <p>
+                        The University of Padua, founded in 1222, is one of Europe's oldest and most prestigious
+                        universities. With a strong tradition in scientific research and innovation, it is
+                        internationally recognized for its high academic standards and diverse range of programs.
+                    </p>
+                    <p>
+                        The university's School of Medicine and Surgery offers an English-taught Medicine and Surgery
+                        program, combining theoretical education with hands-on clinical experience in affiliated
+                        hospitals. Its commitment to quality education and internationalization attracts students from
+                        all over the world.
+                    </p>
+                </div>
+                <div class="universities-wrapper">
+                    <div class="university-cost-study">
+                        <h4>Cost to Study MBBS</h4>
+                        <table class="info-table">
+                            <thead class="primary-color">
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Administrative Fee</th>
+                                    <th>Application Fee</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1st Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>€ 2,500</td>
+                                    <td>€ 30</td>
+                                    <td>€ 5,330</td>
+                                </tr>
+                                <tr>
+                                    <td>2nd Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>3rd Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>4th Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>5th Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>6th Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="university-image">
+                        <img src="assets/images/universities/university-padua.jpg" alt="University of Padua">
+                    </div>
+                </div>
+            </div>
+
+            <!-- University of Rome Tor Vergata -->
+            <div class="top-university-container">
+                <div class="top-university-card">
+                    <h3>Università degli Studi di Roma Tor Vergata</h3>
+                    <p>
+                        Founded in 1982, the Università degli Studi di Roma Tor Vergata is a prominent public university
+                        located in the southeastern part of Rome. It is well-known for its international outlook, modern
+                        campus, and strong emphasis on scientific research and innovation.
+                    </p>
+                    <p>
+                        The university offers a 6-year Medicine and Surgery program taught entirely in English, with a
+                        curriculum that blends theoretical knowledge and clinical training. Its partnerships with major
+                        hospitals in Rome provide students excellent clinical exposure and practical experience.
+                    </p>
+                </div>
+                <div class="universities-wrapper">
+                    <div class="university-cost-study">
+                        <h4>Cost to Study MBBS</h4>
+                        <table class="info-table">
+                            <thead class="primary-color">
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Administrative Fee</th>
+                                    <th>Application Fee</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1st Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>€ 2,500</td>
+                                    <td>€ 30</td>
+                                    <td>€ 5,330</td>
+                                </tr>
+                                <tr>
+                                    <td>2nd Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>3rd Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>4th Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>5th Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                                <tr>
+                                    <td>6th Year</td>
+                                    <td>€ 2,800</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>€ 2,800</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="university-image">
+                        <img src="assets/images/universities/university-torvergata.jpg"
+                            alt="University of Rome Tor Vergata">
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+
+
+    <!-- steps to sutdy in italy -->
+
+    <section id="why-choose-mbbs" class="sec-padding">
+        <div class="heading text-center">
+            <p><strong>Note:</strong> Public Universities generally have only a Winter intake.</p>
+            <h2 class="page-section-heading text-black">
+                Your <span class="highlight-line">Journey</span> to Study in Italy
+            </h2>
+            <p><i>Timeline details can vary based on official MUR notices and specific university deadlines.</i></p>
+        </div>
+        <div>
+            <div class="timeline-steps">
+                <div class="timeline-progress" id="progress-bar"></div>
+
+                <div class="timeline-step active-step" data-step="0">
+                    <div class="step-id">1</div>
+                    <div class="step-name">Apply</div>
+                </div>
+                <div class="timeline-step" data-step="1">
+                    <div class="step-id">2</div>
+                    <div class="step-name">Pre-Enrol</div>
+                </div>
+                <div class="timeline-step" data-step="2">
+                    <div class="step-id">3</div>
+                    <div class="step-name">Funding</div>
+                </div>
+                <div class="timeline-step" data-step="3">
+                    <div class="step-id">4</div>
+                    <div class="step-name">Visa</div>
+                </div>
+                <div class="timeline-step" data-step="4">
+                    <div class="step-id">5</div>
+                    <div class="step-name">Depart</div>
+                </div>
+                <div class="timeline-step" data-step="5">
+                    <div class="step-id">6</div>
+                    <div class="step-name">Arrive</div>
+                </div>
+            </div>
+
+            <div class="timeline-content">
+                <!-- Each content-section is a phase -->
+                <div class="phase-section active-phase">
+                    <div class="phase-header">
+                        <span class="phase-index">1.</span>
+                        <h2>October – May: University Shortlisting & Application Process</h2>
+                    </div>
+                    <div class="phase-grid">
+                        <div class="info-card">
+                            <h3>A. Shortlisting Universities & Courses</h3>
+                            <ul>
+                                <li>Research universities based on ranking, course, fees, scholarships, and careers.
+                                </li>
+                                <li>Check eligibility criteria for Bachelor's, Master's, or PhD.</li>
+                                <li>Consider English/Italian language requirements.</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3>B. University Application</h3>
+                            <h1>Apply through university websites or Universitaly platform.</h1>
+                            <h1>Required documents:</h1>
+                            <ul class="list-marked">
+                                <li>Transcripts</li>
+                                <li>Passport</li>
+                                <li>Motivation letter</li>
+                                <li>CV/Resume</li>
+                                <li>Recommendation letters</li>
+                                <li>Language certificate</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3>C. Entrance Exam / Interview</h3>
+                            <h1>Exams may include:</h1>
+                            <ul class="list-marked">
+                                <li>IMAT, TOLC-I, GRE/GMAT, Aptitude Tests</li>
+                            </ul>
+                            <h1>Some programs require online interviews.</h1>
+                        </div>
+                        <div class="info-card">
+                            <h3>D. Admission Results</h3>
+                            <h1>Results between March–June.</h1>
+                            <h1>Admission letter required for visa application.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-section ">
+                    <div class="phase-header ">
+                        <span class="phase-index">2.</span>
+                        <h2>April – October: Pre-Enrolment & Enrollment Fee Payment</h2>
+                    </div>
+
+                    <div class="phase-grid">
+                        <!-- A -->
+                        <div class="info-card">
+                            <h3>A. Pre-Enrolment on Universitaly</h3>
+                            <ul>
+                                <li>All non-EU students must pre-enroll through Universitaly.it.</li>
+                                <li>This is a mandatory step for initiating the student visa process through the Italian
+                                    Embassy or Consulate in your country.
+                                </li>
+                                <li>Ensure your personal and academic details match your official documents to avoid
+                                    delays
+                                    or rejections.</li>
+                            </ul>
+                        </div>
+
+                        <!-- B -->
+                        <div class="info-card">
+                            <h3>B. Fee Payment for Some Universities</h3>
+                            <ul>
+                                <li>Some universities request students to pay the first installment of tuition fees
+                                    during
+                                    the enrollment phase.</li>
+                                <li>These payments confirm your intent to join and are often required to activate your
+                                    admission.
+                                    Payment receipts are essential for your visa application and university onboarding
+                                    procedures.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="phase-section ">
+                    <div class="phase-header ">
+                        <span class="phase-index">3.</span>
+                        <h2>June – October: Scholarship & Documentation Process</h2>
+                    </div>
+
+                    <div class="phase-grid">
+                        <!-- A -->
+                        <div class="info-card">
+                            <h3>A. Scholarship Online Applications </h3>
+                            <h1>Italian public universities offer multiple scholarship options based on merit
+                                and financial need. These include:</h1>
+                            <ul class="list-marked">
+                                <li>Regional Scholarships (e.g. LazioDisco, DSU, EDISU, ERGO, etc.) – Most popular among
+                                    Indian students</li>
+                                <li>Invest Your Talent in Italy – For selected Master’s programs
+                                </li>
+                                <li>University-specific scholarships – Offered directly by universities</li>
+                            </ul>
+                        </div>
+
+                        <!-- B -->
+                        <div class="info-card">
+                            <h3>B. Documentation Preparation</h3>
+
+                            <ul>
+                                <li>For regional scholarships, students must follow a 3-step document preparation
+                                    process:
+                                </li>
+                                <li>Legalize your family income and financial documents in English (as per Indian
+                                    standards)
+                                    Translate these legalized documents into Italian</li>
+                                <li>Legalize the Italian-translated versions (if required by the scholarship authority)
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="phase-section ">
+                    <div class="phase-header ">
+                        <span class="phase-index">4.</span>
+                        <h2>May – October: Visa Application & Documentation</h2>
+                    </div>
+
+                    <div class="phase-grid">
+                        <!-- A -->
+                        <div class="info-card">
+                            <h4> Step 01: Track Visa Appointments Actively</h4>
+                            <div class="card-box">
+                                <h1>⚠️ Student visa slots (at VFS Global) are extremely limited.</h1>
+                            </div>
+                            <ul>
+                                <li>Regularly check the VFS portal for appointment availability.</li>
+                                <li>Be flexible and ready to book as soon as slots open.
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- B -->
+                        <div class="info-card">
+                            <h4>Step 02: Prepare DOV/CIMEA Certification</h4>
+
+                            <h1>To validate your academic qualifications, choose one of the two:</h1>
+                            <h4>A. DOV (Declaration of Value)</h4>
+                            <h1>Issued by the Italian Embassy/Consulate after verifying your academic documents.
+                                Mandatory for certain universities.</h1>
+                            <h4>B. CIMEA Certification</h4>
+                            <h1>A faster online alternative, widely accepted across Italian public universities.</h1>
+                            <div class="card-box1">
+                                <h1>📌 How to Prepare for DOV/CIMEA:</h1>
+                            </div>
+                            <ul>
+                                <li>First, authenticate your highest qualification from the HED (Higher Education
+                                    Department).</li>
+                                <li><i>Example: For Master’s students, authenticate Bachelor’s degree + transcript.</i>
+                                </li>
+                                <li>Then, Apostille the authenticated documents from MEA India.
+                                    Submit the apostilled documents to Embassy (for DOV) or CIMEA portal.</li>
+                            </ul>
+                            <div class="card-box2"> ⏳ Processing Time: 4–8 weeks. Start early to avoid visa delays.
+                            </div>
+
+                        </div>
+
+                        <!-- C -->
+                        <div class="info-card">
+                            <h4>Step 03: Visa Documentation & Final Submission</h4>
+                            <h1>Gather and submit the following to VFS:</h1>
+                            <ul>
+                                <li>✔️ Admission letter from Italian university</li>
+                                <li>✔️ Pre-enrollment summary (from Universitaly portal)</li>
+                                <li>✔️ Financial proof (bank balance, family sponsorship, ITR, etc.)</li>
+                                <li>✔️ Accommodation confirmation in Italy</li>
+                                <li>✔️ Valid travel insurance</li>
+                                <li>✔️ DOV/CIMEA certification</li>
+                            </ul>
+                            <h1>Once complete, submit your file at VFS Global and await visa approval.</h1>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="phase-section ">
+                    <div class="phase-header ">
+                        <span class="phase-index">5.</span>
+                        <h2>August – December: Pre-Departure Preparation</h2>
+                    </div>
+
+                    <div class="phase-grid">
+                        <!-- A -->
+                        <div class="info-card">
+                            <h3>A. Flight Booking & Travel Readiness</h3>
+                            <ul>
+                                <li>Book your flight only after getting your D-Type Student Visa</li>
+                                <li>Some may need a refundable ticket for visa application
+                                </li>
+                                <li>Choose a travel date that gives you time to settle before classes</li>
+                            </ul>
+                        </div>
+
+                        <!-- B -->
+                        <div class="info-card">
+                            <h3>B. Activate International Roaming Pack (IMPORTANT)</h3>
+
+                            <ul>
+                                <li>Activate a 1-week international roaming pack before you fly</li>
+                                <li>Stay connected during travel & after arrival</li>
+                                <li>Useful if SIM info-card purchase is delayed</li>
+                                <li>Stay in touch with EDU-WIRE, family, and friends easily</li>
+
+                            </ul>
+                        </div>
+
+                        <!-- C -->
+                        <div class="info-card">
+                            <h3>C. Luggage & Essentials Checklist</h3>
+                            <h1>Carry original academic documents + photocopies</h1>
+                            <h1>Must haves :</h1>
+                            <ul class="list-marked">
+
+
+                                <li>Prescribed medicines + doctor’s note</li>
+                                <li>Voltage adapters & seasonal clothing</li>
+                                <li>Kitchen basics, dry snacks, hygiene kits</li>
+
+                            </ul>
+                            <h1>Keep printouts of :</h1>
+                            <ul class="list-marked">
+
+
+                                <li> Visa & travel insurance</li>
+                                <li> Accommodation confirmation</li>
+                                <li> Flight itinerary & offer letter</li>
+
+                            </ul>
+
+                        </div>
+
+                        <!-- D -->
+                        <div class="info-card">
+                            <h3>D. Airport Pickup & Transit Planning</h3>
+                            <ul>
+                                <li>Arrange pickup with family, friends, or KALINGAEURO</li>
+                                <li>Know your arrival address & transit options in advance</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="phase-section ">
+                    <div class="phase-header ">
+                        <span class="phase-index">6.</span>
+                        <h2>Upon Arrival in Italy: Post-Arrival Formalities & Enrollment</h2>
+                    </div>
+
+                    <div class="phase-grid">
+                        <!-- A -->
+                        <div class="info-card">
+                            <h3>A. Apply for Codice Fiscale (Tax Code)</h3>
+                            <h1>Visit Agenzia delle Entrate to apply for your Codice Fiscale.</h1>
+                            <h1>Required For :</h1>
+                            <ul class="list-marked">
+
+
+                                <li> Opening a bank account</li>
+                                <li> Signing a rental contract</li>
+                                <li> Applying for a residence permit</li>
+
+                            </ul>
+                        </div>
+
+                        <!-- B -->
+                        <div class="info-card">
+                            <h3>B. Permesso di Soggiorno (Residence Permit)</h3>
+                            <h1>Apply within 8 working days of arrival in Italy.</h1>
+                            <h1>Steps :</h1>
+                            <ul>
+                                <li>Collect the kit from your local Post Office</li>
+                                <li>Fill and submit with documents + payment</li>
+                                <li>Attend biometric appointment at the Questura</li>
+
+                            </ul>
+                        </div>
+
+                        <!-- C -->
+                        <div class="info-card">
+                            <h3>C. University Physical Enrollment (if required)</h3>
+                            <h1>Some universities require in-person verification</h1>
+                            <h1>Visit with :</h1>
+                            <ul class="list-marked">
+                                <li>Original academic documents</li>
+                                <li>Codice Fiscale</li>
+                                <li>Residence permit receipt</li>
+
+                            </ul>
+                            <h1>Complete enrollment & activate student credentials</h1>
+                        </div>
+
+
+                        <!--D-->
+                        <div class="info-card">
+                            <h3>D. Orientation & Daily Life Setup</h3>
+                            <h1>Attend orientation session (if available)</h1>
+                            <h1>Settle basics: :</h1>
+                            <ul class="list-marked">
+                                <li>Buy & activate Italian SIM</li>
+                                <li>Apply for transport pass</li>
+                                <li>Explore your neighborhood</li>
+                                <li>Use student discounts, try mensa, join student groups</li>
+
+                            </ul>
+
+                        </div>
+
+                        <!--E-->
+                        <div class="info-card">
+                            <h3>E. Open an Italian Bank Account</h3>
+                            <h1>With Codice Fiscale & residence proof, visit a bank</h1>
+                            <h1>Important for :</h1>
+                            <ul class="list-marked">
+                                <li>Receiving scholarships</li>
+                                <li>Paying rent and expenses</li>
+                                <li>Financial stability in Italy</li>
+
+
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- The rest of the sections will follow the same renamed class pattern -->
+                <!-- To keep this message within length limits, I will continue the full renaming in a follow-up message -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- frequently asked questions  -->
+    <section id="faq" class="sec-padding container">
+
+        <div class="heading text-center">
+            <h2 class="page-section-heading text-black">Frequently <span class="highlight-line">Asked Questions</span>
+            </h2>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the IELTS test format?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                The IELTS test covers four modules: Listening, Reading, Writing, and Speaking, with a total duration of
+                around 2 hours and 45 minutes.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the IELTS test format?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                The IELTS test covers four modules: Listening, Reading, Writing, and Speaking, with a total duration of
+                around 2 hours and 45 minutes.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How long is the IELTS score valid?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                IELTS scores are valid for 2 years from the date of your test result.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Can I retake the IELTS test?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes! You can retake the IELTS test as many times as you like. No restrictions.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Which countries accept IELTS scores?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                IELTS scores are accepted by over 11,000 organizations in countries like the UK, Australia, Canada, New
+                Zealand, USA, and many European and Asian countries.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is the difference between IELTS Academic and IELTS General Training?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                IELTS Academic is for study abroad and professional registration, while IELTS General Training is for
+                migration, work experience, and training programs.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How is the IELTS Speaking test conducted?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                The Speaking test is a face-to-face interview with a certified examiner, lasting 11–14 minutes, divided
+                into three parts: introduction, individual speech, and discussion.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How are IELTS scores calculated?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Each section is scored on a Band Scale of 0 to 9. The overall score is the average of the four module
+                scores, rounded to the nearest half or whole band.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I register for the IELTS test?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                You can register online through the official IELTS website or authorized test centers in your city.
+                Choose your date, location, and module type.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is there a minimum score required for visa applications?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes — each country and visa type has different minimum IELTS score requirements. Check the official
+                immigration website of the country you're applying to.
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <section id="counseling" class="eduwire-cta-section">
+        <div class="eduwire-cta-container">
+            <div class="eduwire-cta-content">
+                <div class="eduwire-cta-text">
+                    <h2 class="eduwire-cta-heading">
+                        Make Your Study Abroad Dreams a Reality with EduWire!
+                    </h2>
+                    <p class="eduwire-cta-description">
+                        Explore top universities worldwide and get expert guidance from application to visa and beyond.
+                        Start your global education journey today — we’ve got your back!
+                    </p>
+
+                    <div class="eduwire-cta-contact">
+                        <p><i class="fas fa-phone-alt"></i> <strong>Call/WhatsApp:</strong> <a
+                                href="tel:+919300812637">9300812637</a></p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a
+                                href="mailto:info@eduwireoverseas.com">info@eduwireoverseas.com</a></p>
+                        <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://www.edu-wire.com/"
+                                target="_blank">www.eduwireoverseas.com</a></p>
+                    </div>
+
+                    <!-- Book Free Counseling Button -->
+                    <a href="#" class="eduwire-cta-btn" id="openModal">Book Free Counseling</a>
+
+                </div>
+                <div class="eduwire-cta-image">
+                    <img src="/assets/images/study-abroad-girl.png" alt="World Map with Route Lines - Study Abroad" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of eduwire cta section  -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <div class="nav-brand">
+                    <a href="#" class="logo"><img src="https://edu-wire.com/assets/images/logo.jpg" alt="edu-wire logo">
+                    </a>
+                </div>
+                <p class="footer-tagline">Welcome to Edu Wire, a platform dedicated to facilitating higher education
+                    pursuits overseas.
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Study Abroad</a></li>
+                    <li><a href="#">Visa Assistance</a></li>
+                    <li><a href="#">Test Preparation</a></li>
+                    <li><a href="#">Career Counseling</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Edu Street, Mumbai, India</p>
+                <p>+91 98765 43210</p>
+                <p>info@eduwire.com</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Edu-Wire Consultancy. All rights reserved.
+        </div>
+    </footer>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+    <!-- lenis cdn  -->
+    <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <!-- Initialize Swiper -->
+
+    <script>
+
+
+
+        // smooth scrolling js 
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+        document.addEventListener('DOMContentLoaded', function () {
+            const steps = document.querySelectorAll(".timeline-step");
+            const sections = document.querySelectorAll(".phase-section");
+            const progressBar = document.getElementById("progress-bar");
+
+            // Initialize first step as active if none are active
+            if (steps.length > 0 && !document.querySelector('.timeline-step.active-step')) {
+                steps[0].classList.add('active-step');
+                sections[0].classList.add('active-phase');
+                progressBar.style.width = '0%';
+            }
+
+            steps.forEach((step, index) => {
+                step.addEventListener("click", () => {
+                    // Remove active class from all steps and sections
+                    steps.forEach(s => s.classList.remove("active-step"));
+                    sections.forEach(sec => sec.classList.remove("active-phase"));
+
+                    // Add active class to the current step and corresponding section
+                    step.classList.add("active-step");
+                    if (sections[index]) {
+                        sections[index].classList.add("active-phase");
+                    }
+
+                    // Update progress bar
+                    const stepPercentage = (index / (steps.length - 1)) * 100;
+                    progressBar.style.width = `${stepPercentage}%`;
+                });
+            });
+        });
+
+
+        
+
+    </script>
+</body>
+
+</html>

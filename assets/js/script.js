@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const europeCountries = [
     { name: 'Germany', image: 'germany.png' },
-    { name: 'France', image: 'france.png' },
+    { name: 'France', image: 'france.png', url: 'study-in-france.html' },
     { name: 'Italy', image: 'italy.png' },
     { name: 'Spain', image: 'spain.png' },
     { name: 'Canada', image: 'canada.png' },
@@ -344,7 +344,7 @@ cards.forEach((card) => {
       gsap.to(content, {
          maxHeight: 0,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.5,
         ease: "power2.in",
       });
     },
@@ -353,7 +353,7 @@ cards.forEach((card) => {
        
         maxHeight: content.scrollHeight, // or "none" if you want to expand fully
         opacity: 1,
-        duration: 0.8,
+        duration: 0.5,
         ease: "power2.out",
       });
     },

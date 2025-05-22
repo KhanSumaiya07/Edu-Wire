@@ -13,195 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <style>
-        .container {
-            width: 100%;
-            min-height: 100vh;
-
-            top: 30%;
-            padding: 20px;
-            background-color: #fff;
-        }
-
-
-
-        .contact-box {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .form-left,
-        .location {
-            flex: 1 1 45%;
-            min-width: 300px;
-            height: auto;
-            margin: 10px 0;
-            border-radius: 16px;
-        }
-
-        .location {
-            padding: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-            background: #fff;
-        }
-
-        .address {
-            border-radius: 16px;
-            margin-top: 10px;
-            padding: 6px;
-            transition: border-color 0.3s ease;
-        }
-
-        .address h4 {
-            font-weight: 500;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .address h4 img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            background-color: transparent;
-        }
-
-        .address p {
-            opacity: 0.7;
-            font-size: 14px;
-        }
-
-        .form-container {
-            background-color: #fff;
-            width: 100%;
-            height: auto;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .form-group {
-            flex: 1 1 45%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 6px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        input,
-        select {
-            padding: 12px;
-            border: 1px dotted #0D6493;
-            border-radius: 10px;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        input:focus,
-        select:focus {
-            border-color: #007bff;
-        }
-
-        .checkbox-group {
-            margin-top: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            margin-top: 5px;
-            width: 18px;
-            height: 18px;
-            accent-color: #007bff;
-        }
-
-        .checkbox-group label {
-            font-size: 14px;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        .submit-btn {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .map {
-            width: 100%;
-            height: 60vh;
-            /* margin-top: 40px;
-            border-radius: 20px;
-            overflow: hidden; */
-        }
-
-        /* 🔧 Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .form-group {
-                flex: 1 1 100%;
-            }
-
-            .heading h1 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-box {
-                flex-direction: column;
-            }
-
-            .form-left,
-            .location {
-                flex: 1 1 100%;
-            }
-
-            .heading h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .heading h1 {
-                font-size: 1.6rem;
-            }
-
-            .address h4 img {
-                width: 30px;
-                height: 30px;
-            }
-
-            input,
-            select {
-                font-size: 14px;
-            }
-
-            .checkbox-group label {
-                font-size: 13px;
-            }
-        }
-    </style>
+   
 </head>
 
 <body>
@@ -317,131 +129,125 @@
 
 
 
-    <!-- contact edu-wire to study abroad  -->
+    <!-- all blogs  -->
     <section class="content">
         <div class="container sec-padding">
             <div class="heading text-center">
-                <h2 class="heading-section text-black">Contact <span class="highlight-line">Edu-wire </span>For Abroad
-                    Studies</h2>
+                <h2 class="heading-section text-black">All <span class="highlight-line">Blogs </span></h2>
             </div>
-            <div class="contact-box">
-                <div class="form-left">
-                    <div class="form-container">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group">
 
-                                    <input type="text" id="firstName" name="firstName" placeholder="First Name"
-                                        required>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <input type="email" id="email" name="email" placeholder="Email" required>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <select id="destination" name="destination" required>
-                                        <option value="">Select Destination</option>
-                                        <option value="usa">USA</option>
-                                        <option value="uk">UK</option>
-                                        <option value="australia">Australia</option>
-                                        <option value="canada">Canada</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <input type="text" id="course" name="course" placeholder="Course"
-                                        style="text-transform: capitalize;">
-                                </div>
-
-                                <div class="form-group">
-                                    <select id="studyPlan" name="studyPlan" required>
-                                        <option value="">Please Select</option>
-                                        <option value="2025">Next Year</option>
-                                        <option value="2026">In 2 Years</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <select id="preferredYear" name="preferredYear" required>
-                                        <option value="">Select Year</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="consent" required />
-                                <label for="consent">
-                                    I consent to receiving Calls, WhatsApp, Email and Google RCS from Edwise to assist
-                                    with
-                                    this enquiry.
-                                </label>
-                            </div>
-
-                            <div class="submit-btn">
-                                <button class="edu-wire-btn" type="submit"><a href="">Submit</a></button>
-                            </div>
-                        </form>
-                    </div>
-
+            
+              <div class="blogs-card-container">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="https://media.istockphoto.com/id/1319031310/photo/doctor-writing-a-medical-prescription.jpg?s=612x612&w=0&k=20&c=DWZGM8lBb5Bun7cbxhKT1ruVxRC_itvFzA9jxgoA0N8=" alt="">
                 </div>
-                <div class="location">
 
-
-                    <div class="address">
-                        <h4><img src="./assets/images/contact/location-2.gif" alt="">Bhopal</h4>
-
-                        <p>R-25 GTB Complex, New Market, Bhopal, Madhya Pradesh 462003</p>
-                    </div>
-                    <div class="address">
-                        <h4><img src="./assets/images/contact/location-2.gif" alt="">Dubai</h4>
-
-                        <p>Building, Al Fajer Complex - First Floor Office No112-17 - Oud Metha - Dubai - United Arab
-                            Emirates</p>
-                    </div>
-                    <div class="address">
-                        <h4><img src="./assets/images/contact/location-2.gif" alt="">Indore</h4>
-                        <p>Apartment 114, 1st Floor, 22/03, Tulsi Tower, Geeta Bhawan Square, AB Rd, Indore, Madhya
-                            Pradesh
-                            452001</p>
-                    </div>
-
-
-                    <div class="address">
-                        <h4><img src="./assets/images/contact/email.gif" alt="">Email</h4>
-                        <p><a href="mailto:info@edu-wire.com">info@edu-wire.com</a></p>
-                    </div>
-                    <div class="address">
-                        <h4><img src="./assets/images/contact/phone.gif" alt="">Phone </h4>
-                        <p><a href="tel:+91 93008 12637" class="link1">+91 93008 12637</a>,<a href="tel:+91 76489 99781"
-                                class="link1">+91 97132 80222 </a></p>
-
-                    </div>
+                <h3 class="short-heading">Missed NEET? Your Dream of Becoming a Doctor is Still Alive — Study MBBS Abroad in 2025!</h3>
+                <p class="short-para ">Every year, over 25 lakh students appear for the NEET exam in India, but with only
+                    about 1,06,933 MBBS seats available (including AIQ and State Quota seats), millions of talented
+                    aspirants are left behind, unsure of what to do next.
+                    If you are one of them, don't worry. Your dream of becoming a doctor is still alive — and stronger
+                    than ever — with MBBS Abroad options!
+                </p>
+                <div class="last">
+                    <a href="">Read More </a>
+                    <img src="./assets/images/arrow.gif" style="width: 30px ; height: 30px;" alt="">
                 </div>
             </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="https://media.istockphoto.com/id/1319031310/photo/doctor-writing-a-medical-prescription.jpg?s=612x612&w=0&k=20&c=DWZGM8lBb5Bun7cbxhKT1ruVxRC_itvFzA9jxgoA0N8=" alt="">
+                </div>
+
+                <h3 class="short-heading">Missed NEET? Your Dream of Becoming a Doctor is Still Alive — Study MBBS Abroad in 2025!</h3>
+                <p class="short-para ">Every year, over 25 lakh students appear for the NEET exam in India, but with only
+                    about 1,06,933 MBBS seats available (including AIQ and State Quota seats), millions of talented
+                    aspirants are left behind, unsure of what to do next.
+                    If you are one of them, don't worry. Your dream of becoming a doctor is still alive — and stronger
+                    than ever — with MBBS Abroad options!
+                </p>
+                <div class="last">
+                    <a href="">Read More </a>
+                    <img src="./assets/images/arrow.gif" style="width: 30px ; height: 30px;" alt="">
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="" alt="">
+                </div>
+
+                <h3 class="short-heading">Missed NEET? Your Dream of Becoming a Doctor is Still Alive — Study MBBS Abroad in 2025!</h3>
+                <p class="short-para ">Every year, over 25 lakh students appear for the NEET exam in India, but with only
+                    about 1,06,933 MBBS seats available (including AIQ and State Quota seats), millions of talented
+                    aspirants are left behind, unsure of what to do next.
+                    If you are one of them, don't worry. Your dream of becoming a doctor is still alive — and stronger
+                    than ever — with MBBS Abroad options!
+                </p>
+                <div class="last">
+                    <a href="">Read More </a>
+                    <img src="./assets/images/arrow.gif" style="width: 30px ; height: 30px;" alt="">
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="" alt="">
+                </div>
+
+                <h3 class="short-heading">Missed NEET? Your Dream of Becoming a Doctor is Still Alive — Study MBBS Abroad in 2025!</h3>
+                <p class="short-para ">Every year, over 25 lakh students appear for the NEET exam in India, but with only
+                    about 1,06,933 MBBS seats available (including AIQ and State Quota seats), millions of talented
+                    aspirants are left behind, unsure of what to do next.
+                    If you are one of them, don't worry. Your dream of becoming a doctor is still alive — and stronger
+                    than ever — with MBBS Abroad options!
+                </p>
+                <div class="last">
+                    <a href="">Read More </a>
+                    <img src="./assets/images/arrow.gif" style="width: 30px ; height: 30px;" alt="">
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="" alt="">
+                </div>
+
+                <h3 class="short-heading">Missed NEET? Your Dream of Becoming a Doctor is Still Alive — Study MBBS Abroad in 2025!</h3>
+                <p class="short-para ">Every year, over 25 lakh students appear for the NEET exam in India, but with only
+                    about 1,06,933 MBBS seats available (including AIQ and State Quota seats), millions of talented
+                    aspirants are left behind, unsure of what to do next.
+                    If you are one of them, don't worry. Your dream of becoming a doctor is still alive — and stronger
+                    than ever — with MBBS Abroad options!
+                </p>
+                <div class="last">
+                    <a href="">Read More </a>
+                    <img src="./assets/images/arrow.gif" style="width: 30px ; height: 30px;" alt="">
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="" alt="">
+                </div>
+
+                <h3 class="short-heading">Missed NEET? Your Dream of Becoming a Doctor is Still Alive — Study MBBS Abroad in 2025!</h3>
+                <p class="short-para ">Every year, over 25 lakh students appear for the NEET exam in India, but with only
+                    about 1,06,933 MBBS seats available (including AIQ and State Quota seats), millions of talented
+                    aspirants are left behind, unsure of what to do next.
+                    If you are one of them, don't worry. Your dream of becoming a doctor is still alive — and stronger
+                    than ever — with MBBS Abroad options!
+                </p>
+                <div class="last">
+                    <a href="">Read More </a>
+                    <img src="./assets/images/arrow.gif" style="width: 30px ; height: 30px;" alt="">
+                </div>
+            </div>
+
+
+
+        </div>
+           
         </div>
     </section>
-<div class="map">
-                <!-- <iframe src="https://maps.app.goo.gl/wVjNMi5Br61PE7cq6" width="100%" height="100%" style="border:0;object-fit: cover; overflow: hidden;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe> -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.1591938845477!2d77.39478669678957!3d23.237293400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43a1e3639987%3A0x28e36da38d86089c!2z8J2XmPCdl7HwnZiCIPCdl6rwnZe28J2Xv_Cdl7Ig8J2XovCdmIPwnZey8J2Xv_CdmIDwnZey8J2XrvCdmIAg8J2XlvCdl7zwnZe78J2YgPCdmILwnZe58J2YgfCdl67wnZe78J2YgSDwnZej8J2Yg_CdmIEuIPCdl5_wnZiB8J2XsS4gLSBTdHVkeSBBYnJvYWQvT3ZlcnNlYXMgRWR1Y2F0aW9uL0lFTFRTIENlbnRyZS9TdHVkeSBBYnJvYWQgU2Nob2xhcnNoaXAgaW4gQmhvcGFs!5e0!3m2!1sen!2sin!4v1747819965267!5m2!1sen!2sin" width="100%" height="100%" style="border:0;object-fit: cover;border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+
     <footer class="footer sec-padding">
         <div class="footer-container">
 
