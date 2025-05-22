@@ -907,7 +907,7 @@ sub-dropdown {
     }
 
     .hero-image {
-        margin-bottom: 2rem;
+        margin-bottom: 10px;
         width: 100%;
         height: 100%;
 
@@ -1091,7 +1091,12 @@ section {
         width: 100%;
 
     }
-
+    .hero-content{
+        gap: 0.5rem;
+    }
+    .hero-image{
+        margin: 0;
+    }
     .second-img-mb {
         margin-bottom: 0rem;
     }
@@ -1473,7 +1478,9 @@ select.contact-input-field option {
     .horizontal-scroll-outer {
         padding: 0 !important;
     }
-
+.destination-card{
+    width: 250px;
+}
 
 }
 
@@ -2362,6 +2369,264 @@ select.contact-input-field option {
         border-radius: 20px;
     }
 
-   
+    .why-choose-icons{
+        height: 40px;
+        width: 40px;
+    }
+   .why-choose-icons i {
+    font-size: 1rem;
+}
 
+}
+
+
+
+/* steps to study in italy or country bise  */
+.timeline-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.timeline-steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #d3d3d3;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 5px;
+  background: var(--primary-color);
+  z-index: 1;
+  transition: width 0.5s ease-in-out;
+  transform: translateY(-50%);
+  border-radius: 100px;
+}
+
+.timeline-step {
+  text-align: center;
+  margin-top: 120px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.step-id {
+  background: transparent;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
+}
+
+.timeline-step.active-step .step-id {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.timeline-step.active-step .step-name {
+  color: var(--primary-color);
+}
+
+.step-name {
+  font-weight: 400;
+  display: block;
+}
+
+.phase-section {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.phase-section.active-phase {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.phase-header {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.phase-index {
+  background-color:var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.phase-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background-color: #fff;
+  border: 2px solid var(--blue-border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.info-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 8px;
+}
+
+.info-card p,
+.info-card li {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.info-card h1 {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #444;
+  margin: 10px 0;
+}
+
+.info-card h4 {
+  margin-bottom: 10px;
+}
+
+ul.list-marked li::before {
+  content: "*";
+  color: blue;
+  margin-right: 8px;
+}
+
+ul {
+  list-style: none;
+}
+
+.consult-btn {
+  background-color: #1ebc6f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.consult-btn:hover {
+  background-color: #17a65f;
+}
+
+
+
+.card-box,
+.card-box1,
+.card-box2 {
+  margin: 10px 5px;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  min-height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  word-break: break-word;
+}
+
+.card-box {
+  background-color: #fff1f2;
+  border: 1px dotted #fecaca;
+}
+
+.card-box1 {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.card-box2 {
+  background-color: #fffbeb;
+  border: 1px solid #fee099;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 15px;
+  }
+
+  .timeline-step {
+    margin-top: 100px;
+  }
+
+  .card-box,
+  .card-box1,
+  .card-box2 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper h2 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-step {
+    margin-top: 80px;
+  }
+
+  .step-name {
+    display: none;
+  }
+
+  .phase-header {
+    align-items: flex-start;
+  }
+
+  .phase-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .timeline-steps::before,
+  .timeline-progress {
+    top: 30%;
+    bottom: -30px;
+  }
 }
