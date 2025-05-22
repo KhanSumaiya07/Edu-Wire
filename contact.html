@@ -524,6 +524,38 @@
             © 2025 Edu-Wire Consultancy. All rights reserved.
         </div>
     </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- lenis cdn  -->
+    <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        // smooth scrolling js 
+        // Initialize Lenis
+        const lenis = new Lenis();
+
+        // Use requestAnimationFrame to continuously update the scroll
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+
+
+
+    </script>
 </body>
 
 </html>
