@@ -365,8 +365,9 @@ body {
     background: #fff;
     /* backdrop-filter: var(--glass-effect);  */
     /* -webkit-backdrop-filter: var(--glass-effect); */
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 30px var(--shadow-color);
+    border-bottom: 1px solid #dadada;
+    /* box-shadow: 0 4px 30px var(--shadow-color); */
+    /* border-bottom: 1px solid #dadada; */
     transition: var(--transition-medium);
 }
 
@@ -401,7 +402,7 @@ body {
 
 .nav-list {
     display: flex;
-    gap: 1.5rem;
+    /* gap: 1.5rem; */
     list-style: none;
 }
 
@@ -809,6 +810,7 @@ sub-dropdown {
 
     .nav-active .nav-menu {
         right: 0;
+        overflow-y: scroll;
     }
 
     .nav-list {
@@ -869,6 +871,7 @@ sub-dropdown {
         width: 100%;
         flex-direction: column;
         gap: 1rem;
+        display: none;
     }
 
     .search-container {
@@ -898,8 +901,8 @@ sub-dropdown {
     }
 
     .hero-image img {
-        width: 90% !important;
-        height: 90% !important;
+        width: 100% !important;
+        height: 100% !important;
         object-fit: cover;
     }
 
@@ -994,7 +997,7 @@ section {
 
 .swiper-slide img {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
 }
@@ -1029,6 +1032,10 @@ section {
 
 }
 
+.second-img-mb {
+    margin-bottom: 6rem;
+}
+
 
 
 .hero-content {
@@ -1059,7 +1066,8 @@ section {
     display: block;
     width: 100%;
     height: 26px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 26' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.5596 5.10535C26.0614 6.62996 58.9167 6.70621 148.107 6.85867C287.38 7.08736 397.914 8.76442 428.635 11.2038C431.074 11.4325 235.848 13.1096 215.799 11.8899C184.545 9.90787 35.2852 11.5849 5.25037 13.8719C-3.28745 14.4817 -0.0857323 16.6162 5.4791 17.0736C14.1693 17.8359 37.496 17.7596 101.454 17.6072C146.43 17.5309 504.256 19.2842 543.362 22.4097C565.316 24.163 578.657 25.7638 584.755 25.3827C589.862 25.0778 589.939 24.163 585.517 21.6474C582.544 19.9703 585.898 18.9793 588.033 18.5219C591.311 17.7596 589.939 15.1678 585.822 13.1096C580.257 10.289 570.652 10.3653 575.226 13.1858C576.217 13.7956 576.446 15.3202 572.939 15.0153C562.724 14.1006 490.534 7.84966 470.943 6.78243C261.766 -4.8046 57.6207 3.65697 14.398 0.836441C-0.924302 -0.230786 6.08901 4.19059 13.5596 5.10535Z' fill='%23F7CB2D'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 26' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23e77763'/%3E%3Cstop offset='100%25' stop-color='%23edb992'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23grad1)' fill-rule='evenodd' clip-rule='evenodd' d='M13.5596 5.10535C26.0614 6.62996 58.9167 6.70621 148.107 6.85867C287.38 7.08736 397.914 8.76442 428.635 11.2038C431.074 11.4325 235.848 13.1096 215.799 11.8899C184.545 9.90787 35.2852 11.5849 5.25037 13.8719C-3.28745 14.4817 -0.0857323 16.6162 5.4791 17.0736C14.1693 17.8359 37.496 17.7596 101.454 17.6072C146.43 17.5309 504.256 19.2842 543.362 22.4097C565.316 24.163 578.657 25.7638 584.755 25.3827C589.862 25.0778 589.939 24.163 585.517 21.6474C582.544 19.9703 585.898 18.9793 588.033 18.5219C591.311 17.7596 589.939 15.1678 585.822 13.1096C580.257 10.289 570.652 10.3653 575.226 13.1858C576.217 13.7956 576.446 15.3202 572.939 15.0153C562.724 14.1006 490.534 7.84966 470.943 6.78243C261.766 -4.8046 57.6207 3.65697 14.398 0.836441C-0.924302 -0.230786 6.08901 4.19059 13.5596 5.10535Z'/%3E%3C/svg%3E");
+
     background-size: contain;
     background-repeat: no-repeat;
     top: 85%;
@@ -1075,6 +1083,7 @@ section {
 
     .hero-slide {
         flex-direction: column-reverse;
+        margin-top: 2rem;
     }
 
     .hero-image,
@@ -1082,6 +1091,11 @@ section {
         width: 100%;
 
     }
+
+    .second-img-mb {
+        margin-bottom: 0rem;
+    }
+
 
 }
 
@@ -1354,7 +1368,7 @@ select.contact-input-field option {
 /* top study abraod destinations section  */
 .destination-section {
     background-color: #fff;
-    padding: 4rem 2rem;
+    /* padding: 4rem 2rem;  */
 }
 
 .section-title {
@@ -1460,9 +1474,7 @@ select.contact-input-field option {
         padding: 0 !important;
     }
 
-    .destination-section {
-        padding: 0 !important;
-    }
+
 }
 
 
@@ -1613,7 +1625,8 @@ select.contact-input-field option {
         display: none;
         /* Hide image for a better mobile UX if needed */
     }
-    .steps-section img{
+
+    .steps-section img {
         border-radius: 20px;
     }
 }
@@ -2150,25 +2163,25 @@ select.contact-input-field option {
 .admission-steps-container {}
 
 .progress-bar-container {
-  width: 6px;
-  height: 350px;
-  background: #b1adad;
-  border-radius: 3px;
-  margin-top: 5px;
-  position: relative;
+    width: 6px;
+    height: 350px;
+    background: #b1adad;
+    border-radius: 3px;
+    margin-top: 5px;
+    position: relative;
 }
 
 .progress-bar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 0;
-  background-color: #0d6493;
-  border-radius: 3px;
-  transition: all 0.8s ease; 
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background-color: #0d6493;
+    border-radius: 3px;
+    transition: all 0.8s ease;
 }
 
-.admission-step .left-content{
+.admission-step .left-content {
     width: 50%;
 }
 
@@ -2177,7 +2190,7 @@ select.contact-input-field option {
     height: 362px;
 }
 
-.admission-step .right-image img{
+.admission-step .right-image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -2198,7 +2211,7 @@ select.contact-input-field option {
     background-color: #a2c4e082;
 }
 
-.admission-step span{
+.admission-step span {
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.3;
@@ -2227,9 +2240,10 @@ select.contact-input-field option {
         padding: 20px;
     }
 
-    .progress-bar-container{
+    .progress-bar-container {
         display: none;
     }
+
     .admission-step .left-content {
         width: 100%;
     }
@@ -2238,7 +2252,7 @@ select.contact-input-field option {
         width: 100%;
         height: 200px;
     }
-    
+
 }
 
 /* ------------------  */
@@ -2250,9 +2264,104 @@ select.contact-input-field option {
 /* mbbs pages lists for about country  */
 .country-list-bullet li {
     margin-bottom: 1rem;
-    list-style: none;
+    color: #fff;
 }
 
 #about img {
     border-radius: 30px;
+}
+
+.about-country-list {
+    margin-left: 1rem;
+}
+
+.why-choose-mbbs-card {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.why-choose-icons {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.why-choose-icons i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.top-university-container {
+    border: 2px solid var(--blue-border-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background-color: #a2c4e082;
+    padding: 1rem;
+}
+
+.universities-wrapper {
+    display: flex;
+
+}
+
+
+.university-cost-study,
+.university-image {
+    width: 50%;
+}
+
+.university-cost-study table {
+    background: #fff;
+}
+
+.university-image {
+    padding: 10px;
+}
+
+.university-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.university-cost-study h4 {
+    margin: 10px 0;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .universities-wrapper{
+        flex-direction: column;
+    }
+    .university-cost-study,
+    .university-image {
+        width: 100%;
+    }
+
+    .university-cost-study table {
+        background: #fff;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .university-image{
+        padding: 0;
+    }
+
+    .university-image img {
+        border-radius: 20px;
+    }
+
+   
+
 }
